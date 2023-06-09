@@ -13,6 +13,8 @@ Codes & details for following steps can be found in the respective repository fo
 ## Summary of pipeline
 The variant calling and joint calling steps follows GATK recommended pipeline documentation (v3.7) (https://github.com/broadinstitute/gatk-docs/tree/master/gatk3-tooldocs/3.7-0)
 
-![image](https://github.com/fjnlab/PD_exome-seq/assets/58157134/934e886f-2b06-4bb1-a1bc-f05193e4b07e)
+![image](https://github.com/fjnlab/PD_exome-seq/assets/58157134/fcfc0263-a844-46c7-a1bf-0ea6fd4fdfa2)
+
+
 
 
