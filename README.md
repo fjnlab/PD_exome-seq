@@ -20,5 +20,5 @@ Steps for coverage, variant calling, joint calling, VQSR, split to different all
 ## Contact
 For questions, you may contact:
 
-Foo Jia Nee: jianee.foo@ntu.edu.sg
+Foo Jia Nee, jianee.foo@ntu.edu.sg
 
