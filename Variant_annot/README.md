@@ -4,9 +4,10 @@ Code here are based on GRCh37 (hg19) genomic coordinates
 ## Requirements
 - PERL
 - [Ensembl VEP](https://asia.ensembl.org/info/docs/tools/vep/script/vep_download.html) (v104) and [cache](https://asia.ensembl.org/info/docs/tools/vep/script/vep_cache.html) database for GRCh37
+- [dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP) for VEP plugin
+- [LOFTEE](https://github.com/konradjk/loftee) for VEP plugin
 - [ANNOVAR](https://annovar.openbioinformatics.org/en/latest/) to extract Genome Aggregation Database (gnomAD) population-level frequences
-- VEP plugin [LOFTEE](https://github.com/konradjk/loftee) for pathogenecity predictions
-- [PolyPhen-2](http://genetics.bwh.harvard.edu/pph2/) tool for pathogeneticy predictions
+- [PolyPhen-2](http://genetics.bwh.harvard.edu/pph2/) tool
 
 
 ## Usage
