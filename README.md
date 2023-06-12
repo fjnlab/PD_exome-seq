@@ -8,6 +8,7 @@ Codes & details for following steps can be found in the respective repository fo
 - Steps prior to variant quality filtering, `prior_VariantQC`
 - Variant annotation,`Variant_annot`
 - Filtering: Variant Quality and Variant Pathogenecity prediction, `Filtering`
+- Cochran-Mantel-Haenszel (CMH) Gene-based test, `Gene_based_test`
 
 
 ## Summary of pipeline
