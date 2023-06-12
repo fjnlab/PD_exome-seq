@@ -28,7 +28,7 @@ ${VEP} -i ${VCF_IN} --cache --dir_cache ${CACHE_DB} --offline --cache_version 10
  --numbers \
  --variant_class --hgvs --check_existing \
  --fasta ${REFERENCE} --symbol \
- --plugin dbNSFP,${DBNSFP},${REPLACE_LOGIC},Ensembl_transcriptid,Uniprot_acc_Polyphen2, Polyphen2_HDIV_pred,Polyphen2_HVAR_pred \
+ --plugin dbNSFP,${DBNSFP},${REPLACE_LOGIC},Ensembl_transcriptid,Uniprot_acc_Polyphen2,Polyphen2_HDIV_pred,Polyphen2_HVAR_pred \
  --dir_plugins ${VEP_plugin} --plugin LoF,loftee_path:${LOFTEE},human_ancestor_fa:${LOFTEE_DB}/human_ancestor.fa.gz,conservation_file:${LOFTEE_DB}/phylocsf_gerp.sql,gerp_bases:${LOFTEE_DB}/GERP_scores.final.sorted.txt.gz,gerp_exons:${LOFTEE_DB}/GERP_scores.exons.txt.gz \
  --output_file ${OUT} –tab –verbose
 ```
