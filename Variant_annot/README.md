@@ -84,17 +84,17 @@ Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out
 
 
 ### 4. Genome Aggregation Database (gnomAD) population-level frequencies (v2.1.1) were added using ANNOVAR
-Format  `variants.filtered_DPGQ.uniqID.vcf` for ANNOVAR according to https://annovar.openbioinformatics.org/en/latest/user-guide/input/ with modifications
+Format input file `variants.filtered_DPGQ.uniqID.vcf` for ANNOVAR according to https://annovar.openbioinformatics.org/en/latest/user-guide/input/ with modifications
 
 ```bash
 ## we have modified output of convert2annovar.pl, to facilitate merging of annotation output later
 ## convert2annovar.pl is provided as part of ANNOVAR package
-perl convert2annovar.pl -format vcf4 -allsample -withfreq -includeinfo variants.DP8GQ20_filtered.uniqID.vcf > variants.avlist.tmp
+perl ${$ANNOVAR_DIR}/convert2annovar.pl -format vcf4 -allsample -withfreq -includeinfo variants.DP8GQ20_filtered.uniqID.vcf > variants.avlist.tmp
 cut -f1-8,11 variants.avlist.tmp > variants.avlist
 
 ## using ANNOVAR to extract gnomAD exome, gnomAD genome population AF
-perl $ANNOVAR_DIR/annotate_variation.pl -build hg19 -filter -dbtype gnomad211_exome $outdir/variants.avlist -otherinfo $ANNOVAR_DIR/humandb/
-perl $ANNOVAR_DIR/annotate_variation.pl -build hg19 -filter -dbtype gnomad211_genome $outdir/variants.avlist -otherinfo $ANNOVAR_DIR/humandb/
+perl ${ANNOVAR_DIR}/annotate_variation.pl -build hg19 -filter -dbtype gnomad211_exome $outdir/variants.avlist -otherinfo $ANNOVAR_DIR/humandb/
+perl ${ANNOVAR_DIR}/annotate_variation.pl -build hg19 -filter -dbtype gnomad211_genome $outdir/variants.avlist -otherinfo $ANNOVAR_DIR/humandb/
 ```
 
 
