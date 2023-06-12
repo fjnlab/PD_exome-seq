@@ -93,6 +93,7 @@ perl ${$ANNOVAR_DIR}/convert2annovar.pl -format vcf4 -allsample -withfreq -inclu
 cut -f1-8,11 variants.avlist.tmp > variants.avlist
 
 ## using ANNOVAR to extract gnomAD exome, gnomAD genome population AF
+## to use *_dropped for combine step later
 perl ${ANNOVAR_DIR}/annotate_variation.pl -build hg19 -filter -dbtype gnomad211_exome $outdir/variants.avlist -otherinfo $ANNOVAR_DIR/humandb/
 perl ${ANNOVAR_DIR}/annotate_variation.pl -build hg19 -filter -dbtype gnomad211_genome $outdir/variants.avlist -otherinfo $ANNOVAR_DIR/humandb/
 ```
