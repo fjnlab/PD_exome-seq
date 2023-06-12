@@ -17,5 +17,7 @@ Steps for coverage, variant calling, joint calling, VQSR, split to different all
 ![image](https://github.com/fjnlab/PD_exome-seq/assets/58157134/fcfc0263-a844-46c7-a1bf-0ea6fd4fdfa2)
 
 
-
+## Contact
+For questions, you may contact:
+Foo Jia Nee: jianee.foo@ntu.edu.sg
 
