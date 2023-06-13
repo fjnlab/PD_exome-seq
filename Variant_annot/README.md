@@ -51,7 +51,7 @@ Input: variants.DP8GQ20_filtered.uniqID.vep.table.out
 Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out
 
 
-``` bash
+```
 1. Chr : chromosomal position of variant
 2. Position : variant genomic coordinates based on GRCh37 (hg19)
 3. Ref : reference allele
@@ -128,102 +128,104 @@ Combine VEP annotation, population level gnomAD frequencies, PolyPhen-2 predicti
 ## Output: variantannot.tsv
 perl merge_VEP_gnomad.pl variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out variants.avlist.hg19_gnomad211_exome_dropped variants.avlist.hg19_gnomad211_genome_dropped
 
-## Combine annotation.tsv + samplegenotype_sorted_pmiss_hwe
+## Combine variantannot.tsv + samplegenotype_sorted_pmiss_hwe
 ## Output files: variantannot_samplegeno.tsv, samplegeno.tsv
 perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_hwe
 ```
 
-- Chr
-- Position
-- Ref
-- Alt
-- TranscriptID
-- GeneID
-- GeneName
-- gnomAD2.1.1_exomes_AF
-- gnomAD2.1.1_exomes_AFR
-- gnomAD2.1.1_exomes_AMR
-- gnomAD2.1.1_exomes_EAS
-- gnomAD2.1.1_exomes_SAS
-- gnomAD2.1.1_exomes_NFE
-- gnomAD2.1.1_exomes_FIN
-- gnomAD2.1.1_genomes_AF
-- gnomAD2.1.1_genomes_AFR
-- gnomAD2.1.1_genomes_AMR
-- gnomAD2.1.1_genomes_EAS
-- gnomAD2.1.1_genomes_SAS
-- gnomAD2.1.1_genomes_NFE
-- gnomAD2.1.1_genomes_FIN
-- #Uploaded_variation
-- Location
-- Allele
-- Transcript
-- Consequence
-- Intron_variant
-- Exon_number
-- Intron_number
-- Protein_pos
-- Amino_acids
-- HGVSc
-- HGVSp
-- SnpID
-- Impact
-- Strand
-- Variant_class
-- Biotype
-- Polyphen2_Transcriptid
-- Uniprot_acc_Polyphen2
-- Polyphen2_HDIV_pred
-- Polyphen2_HVAR_pred
-- LoF
-- LoF_filter
-- LoF_info
-- CANONICAL
-- Allele_Freq_Control
-- Allele_Freq_Case
-- Allele_Freq_All_Samples
-- Missing_Call_Rate_Control
-- Missing_Call_Rate_Case
-- Missing_Call_Rate_All
-- Filter
-- Control_NA
-- Control_0
-- Control_1
-- Control_2
-- Case_NA
-- Case_0
-- Case_1
-- Case_2
-- Pmiss
-- Pmiss_OddRatio
-- Pmiss_Log_OR
-- Pmiss_abs_logOR
-- total
-- HWE_ctrl_pval
-- Chr
-- Position
-- Ref
-- Alt
-- TranscriptID
-- Per-sample genotype (x N columns)
-- Allele_Freq_Control
-- Allele_Freq_Case
-- Allele_Freq_All_Samples
-- Missing_Call_Rate_Control
-- Missing_Call_Rate_Case
-- Missing_Call_Rate_All
-- Filter
-- Control_NA
-- Control_0
-- Control_1
-- Control_2
-- Case_NA
-- Case_0
-- Case_1
-- Case_2
-- Pmiss
-- Pmiss_OddRatio
-- Pmiss_Log_OR
-- Pmiss_abs_logOR
-- total
-- HWE_ctrl_pval
+```
+1. Chr : chromosomal position of variant
+2. Position : variant genomic coordinates based on GRCh37 (hg19)
+3. Ref : reference allele
+4. Alt : alternate allele
+5. TranscriptID : ENSTID format (Ensembl transcript ID)
+6. GeneID : ENSGID format (Ensembl gene ID)
+7. GeneName : Gene symbol
+8. gnomAD2.1.1_exomes_AF : Population allele frequency in all gnomAD whole exome samples (v2.1.1); from ANNOVAR output
+9. gnomAD2.1.1_exomes_AFR : Population allele frequency in African/African American gnomAD exome samples (v2.1.1); from ANNOVAR output
+10. gnomAD2.1.1_exomes_AMR : Population allele frequency in Latino gnomAD exome samples (v2.1.1); from ANNOVAR output
+11. gnomAD2.1.1_exomes_EAS : Population allele frequency in East Asian gnomAD exome samples (v2.1.1); from ANNOVAR output
+12. gnomAD2.1.1_exomes_SAS : Population allele frequency in South Asian gnomAD exome samples (v2.1.1); from ANNOVAR output
+13. gnomAD2.1.1_exomes_NFE : Population allele frequency in Non-Finnish European gnomAD exome samples (v2.1.1); from ANNOVAR output
+14. gnomAD2.1.1_exomes_FIN : Population allele frequency in Finnish gnomAD exome samples (v2.1.1); from ANNOVAR output
+15. gnomAD2.1.1_genomes_AF : Population allele frequency in all gnomAD whole genome samples (v2.1.1); from ANNOVAR output
+16. gnomAD2.1.1_genomes_AFR : Population allele frequency in African/African American gnomAD samples (v2.1.1); from ANNOVAR output
+17. gnomAD2.1.1_genomes_AMR : Population allele frequency in Latino gnomAD samples (v2.1.1); from ANNOVAR output
+18. gnomAD2.1.1_genomes_EAS : Population allele frequency in East Asian gnomAD samples (v2.1.1); from ANNOVAR output
+19. gnomAD2.1.1_genomes_SAS : Population allele frequency in South Asian Asian gnomAD samples (v2.1.1); from ANNOVAR output
+20. gnomAD2.1.1_genomes_NFE : Population allele frequency in Non-Finnish European Asian gnomAD samples (v2.1.1); from ANNOVAR output
+21. gnomAD2.1.1_genomes_FIN : Population allele frequency in Finnish Asian gnomAD samples (v2.1.1); from ANNOVAR output
+22. #Uploaded_variation : format takes chr:position:ref:alt; from VEP output
+23. Location : variant genomic coordinates based on GRCh37 (hg19); from VEP output
+24. Allele : alternate allele; from VEP output
+25. Transcript : ENSTID; from VEP output
+26. Consequence : predicted effects of allele on transcript, see [Ensembl Calculated consequences](https://asia.ensembl.org/info/genome/variation/prediction/predicted_data.html) for the exhaustive list on consequence types
+27. Intron_variant : "YES" or "NO" if variant is in intronic region
+Exon_number : Affected exon numbering, format takes exon number/total; VEP output
+28. Intron_number : Affected intron numbering, format takes exon number/total; VEP output
+29. Protein_pos : Relative position of amino acid in protein; VEP output
+30. Amino_acids : Reference and variant amino acids; VEP output
+31. HGVSc : HGVS coding sequence name; VEP output
+32. HGVSp : HGVS protein sequence name; VEP output
+33. SnpID : Identifier(s) of co-located known variants; VEP output
+34. Impact : Subjective impact classification of consequence type; VEP output
+35. Strand : 1/-1 for strand; VEP output
+36. Variant_class : SO variant class; VEP output
+37. Biotype : Biotype of transcript or regulatory feature; VEP output
+38. Polyphen2_Transcriptid : Ensembl transcript ids (Multiple entries separated by ";"); dbNSFP VEP plugin output
+39. Uniprot_acc_Polyphen2 : Uniprot accession number provided by PolyPhen2 (Multiple entries separated by ";"); dbNSFP VEP plugin output
+40. Polyphen2_HDIV_pred : Polyphen2 prediction based on HumDiv Model ("D" probably damaging, "P" possibly damaging, "B" benign); dbNSFP VEP plugin output
+41. Polyphen2_HVAR_pred : Polyphen2 prediction based on HumVar Model ("D" probably damaging, "P" possibly damaging, "B" benign); dbNSFP VEP plugin output
+42. LoF : Loss-of-function annotation (HC = High Confidence; LC = Low Confidence); LOFTEE VEP plugin output
+43. LoF_filter : Reason for LoF not being HC; LOFTEE VEP plugin output
+44. LoF_info :  Info used for LoF annotation; LOFTEE VEP plugin output
+45. CANONICAL : if annotation is based on Ensembl canonical transcript 
+46. Allele_Freq_Control : minor allele frequencies in control samples
+47. Allele_Freq_Case : minor allele frequencies in case samples
+48. Allele_Freq_All_Samples : minor allele frequencies in all samples
+49. Missing_Call_Rate_Control : calculated from “NA” genotype calls in control samples; for variant quality QC
+50. Missing_Call_Rate_Case : calculated from “NA” genotype calls in case samples; for variant quality QC
+51. Missing_Call_Rate_All : calculated from “NA” genotype calls in all samples; for variant quality QC
+52. Filter : VQSR filter status; for variant quality QC
+53. Control_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in control samples
+54. Control_0 : no. of “0” (homozygous for reference allele) genotype calls in control samples
+55. Control_1 : no. of “1” (heterozygous) genotype calls in control samples
+56: Control_2 : no. of “2” (homozygous for alternate allele) genotype calls in control samples
+57: Case_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in case samples
+58. Case_0 : no. of “0” (homozygous for reference allele) genotype calls in case samples
+59: Case_1 : no. of “1” (heterozygous) genotype calls in case samples
+60: Case_2 : no. of “2” (homozygous for alternate allele) genotype calls in case samples
+61: Pmiss : p-value for differential missingness between cases and controls; for variant quality QC
+62: Pmiss_OddRatio : odds ratio for differential missingness between cases and controls; for variant quality QC
+63: Pmiss_Log_OR : (log base 10) of odds ratio for differential missingness between cases and controls; for variant quality QC
+64: Pmiss_abs_logOR : absolute value of (log base 10) odds ratio for differential missingness between cases and controls; for variant quality QC
+65: total : total as calculated in 2 x 2 Chi-squared for pmiss calculation; for variant quality QC
+66: HWE_ctrl_pval : p-value of Hardy-Weinberg equilibrium test for controls; for variant quality QC
+67: Chr: columns here onwards are merged from samplegeno.tsv file
+68: Position
+69: Ref
+70: Alt
+71: TranscriptID
+72 + n: Per-sample genotype (x N sample columns)
+73 + n: Allele_Freq_Control
+74 + n: Allele_Freq_Case
+75 + n: Allele_Freq_All_Samples
+76 + n: Missing_Call_Rate_Control
+77 + n: Missing_Call_Rate_Case
+78 + n: Missing_Call_Rate_All
+79 + n: Filter
+80 + n: Control_NA
+81 + n: Control_0
+82 + n: Control_1
+83 + n: Control_2
+84 + n: Case_NA
+85 + n: Case_0
+86 + n: Case_1
+87 + n: Case_2
+88 + n: Pmiss
+89 + n: Pmiss_OddRatio
+90 + n: Pmiss_Log_OR
+91 + n: Pmiss_abs_logOR
+92 + n: total
+93 + n: HWE_ctrl_pval
+```
