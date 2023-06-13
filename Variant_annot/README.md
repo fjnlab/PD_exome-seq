@@ -13,7 +13,7 @@ Code here are based on GRCh37 (hg19) genomic coordinates.
 
 
 ## Usage
-### 1. Generate unique identifier for VEP submission from `variants.filtered_DPGQ.vcf.gz`
+### 1. Generate unique identifier for VEP submission from `variants.filtered_DPGQ.vcf.gz`. (Already done in steps prior to Variant filtering, see step #2)
 ```bash
 ./run_uniqueID_vcf.sh
 ```
