@@ -59,7 +59,7 @@ Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out
 5. TranscriptID : ENSTID format (Ensembl transcript ID)
 6. GeneID : ENSGID format (Ensembl gene ID)
 7. GeneName : Gene symbol
-8. Uploaded_variation : format takes chr:position:ref:alt; from VEP output
+8. #Uploaded_variation : format takes chr:position:ref:alt; from VEP output
 9. Location : variant genomic coordinates based on GRCh37 (hg19); from VEP output
 10. Allele : alternate allele; from VEP output
 11. Transcript : ENSTID; from VEP output
@@ -161,71 +161,71 @@ perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_
 25. Transcript : ENSTID; from VEP output
 26. Consequence : predicted effects of allele on transcript, see [Ensembl Calculated consequences](https://asia.ensembl.org/info/genome/variation/prediction/predicted_data.html) for the exhaustive list on consequence types
 27. Intron_variant : "YES" or "NO" if variant is in intronic region
-Exon_number : Affected exon numbering, format takes exon number/total; VEP output
-28. Intron_number : Affected intron numbering, format takes exon number/total; VEP output
-29. Protein_pos : Relative position of amino acid in protein; VEP output
-30. Amino_acids : Reference and variant amino acids; VEP output
-31. HGVSc : HGVS coding sequence name; VEP output
-32. HGVSp : HGVS protein sequence name; VEP output
-33. SnpID : Identifier(s) of co-located known variants; VEP output
-34. Impact : Subjective impact classification of consequence type; VEP output
-35. Strand : 1/-1 for strand; VEP output
-36. Variant_class : SO variant class; VEP output
-37. Biotype : Biotype of transcript or regulatory feature; VEP output
-38. Polyphen2_Transcriptid : Ensembl transcript ids (Multiple entries separated by ";"); dbNSFP VEP plugin output
-39. Uniprot_acc_Polyphen2 : Uniprot accession number provided by PolyPhen2 (Multiple entries separated by ";"); dbNSFP VEP plugin output
-40. Polyphen2_HDIV_pred : Polyphen2 prediction based on HumDiv Model ("D" probably damaging, "P" possibly damaging, "B" benign); dbNSFP VEP plugin output
-41. Polyphen2_HVAR_pred : Polyphen2 prediction based on HumVar Model ("D" probably damaging, "P" possibly damaging, "B" benign); dbNSFP VEP plugin output
-42. LoF : Loss-of-function annotation (HC = High Confidence; LC = Low Confidence); LOFTEE VEP plugin output
-43. LoF_filter : Reason for LoF not being HC; LOFTEE VEP plugin output
-44. LoF_info :  Info used for LoF annotation; LOFTEE VEP plugin output
-45. CANONICAL : if annotation is based on Ensembl canonical transcript 
-46. Allele_Freq_Control : minor allele frequencies in control samples
-47. Allele_Freq_Case : minor allele frequencies in case samples
-48. Allele_Freq_All_Samples : minor allele frequencies in all samples
-49. Missing_Call_Rate_Control : calculated from “NA” genotype calls in control samples; for variant quality QC
-50. Missing_Call_Rate_Case : calculated from “NA” genotype calls in case samples; for variant quality QC
-51. Missing_Call_Rate_All : calculated from “NA” genotype calls in all samples; for variant quality QC
-52. Filter : VQSR filter status; for variant quality QC
-53. Control_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in control samples
-54. Control_0 : no. of “0” (homozygous for reference allele) genotype calls in control samples
-55. Control_1 : no. of “1” (heterozygous) genotype calls in control samples
-56: Control_2 : no. of “2” (homozygous for alternate allele) genotype calls in control samples
-57: Case_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in case samples
-58. Case_0 : no. of “0” (homozygous for reference allele) genotype calls in case samples
-59: Case_1 : no. of “1” (heterozygous) genotype calls in case samples
-60: Case_2 : no. of “2” (homozygous for alternate allele) genotype calls in case samples
-61: Pmiss : p-value for differential missingness between cases and controls; for variant quality QC
-62: Pmiss_OddRatio : odds ratio for differential missingness between cases and controls; for variant quality QC
-63: Pmiss_Log_OR : (log base 10) of odds ratio for differential missingness between cases and controls; for variant quality QC
-64: Pmiss_abs_logOR : absolute value of (log base 10) odds ratio for differential missingness between cases and controls; for variant quality QC
-65: total : total as calculated in 2 x 2 Chi-squared for pmiss calculation; for variant quality QC
-66: HWE_ctrl_pval : p-value of Hardy-Weinberg equilibrium test for controls; for variant quality QC
-67: Chr: columns here onwards are merged from samplegenotype_sorted_pmiss_hwe file
-68: Position
-69: Ref
-70: Alt
-71: TranscriptID
-72 + n: Per-sample genotype (x N sample columns)
-73 + n: Allele_Freq_Control
-74 + n: Allele_Freq_Case
-75 + n: Allele_Freq_All_Samples
-76 + n: Missing_Call_Rate_Control
-77 + n: Missing_Call_Rate_Case
-78 + n: Missing_Call_Rate_All
-79 + n: Filter
-80 + n: Control_NA
-81 + n: Control_0
-82 + n: Control_1
-83 + n: Control_2
-84 + n: Case_NA
-85 + n: Case_0
-86 + n: Case_1
-87 + n: Case_2
-88 + n: Pmiss
-89 + n: Pmiss_OddRatio
-90 + n: Pmiss_Log_OR
-91 + n: Pmiss_abs_logOR
-92 + n: total
-93 + n: HWE_ctrl_pval
+28. Exon_number : Affected exon numbering, format takes exon number/total; VEP output
+29. Intron_number : Affected intron numbering, format takes exon number/total; VEP output
+30. Protein_pos : Relative position of amino acid in protein; VEP output
+31. Amino_acids : Reference and variant amino acids; VEP output
+32. HGVSc : HGVS coding sequence name; VEP output
+33. HGVSp : HGVS protein sequence name; VEP output
+34. SnpID : Identifier(s) of co-located known variants; VEP output
+35. Impact : Subjective impact classification of consequence type; VEP output
+36. Strand : 1/-1 for strand; VEP output
+37. Variant_class : SO variant class; VEP output
+38. Biotype : Biotype of transcript or regulatory feature; VEP output
+39. Polyphen2_Transcriptid : Ensembl transcript ids (Multiple entries separated by ";"); dbNSFP VEP plugin output
+40. Uniprot_acc_Polyphen2 : Uniprot accession number provided by PolyPhen2 (Multiple entries separated by ";"); dbNSFP VEP plugin output
+41. Polyphen2_HDIV_pred : Polyphen2 prediction based on HumDiv Model ("D" probably damaging, "P" possibly damaging, "B" benign); dbNSFP VEP plugin output
+42. Polyphen2_HVAR_pred : Polyphen2 prediction based on HumVar Model ("D" probably damaging, "P" possibly damaging, "B" benign); dbNSFP VEP plugin output
+43. LoF : Loss-of-function annotation (HC = High Confidence; LC = Low Confidence); LOFTEE VEP plugin output
+44. LoF_filter : Reason for LoF not being HC; LOFTEE VEP plugin output
+45. LoF_info :  Info used for LoF annotation; LOFTEE VEP plugin output
+46. CANONICAL : if annotation is based on Ensembl canonical transcript 
+47. Allele_Freq_Control : minor allele frequencies in control samples
+48. Allele_Freq_Case : minor allele frequencies in case samples
+49. Allele_Freq_All_Samples : minor allele frequencies in all samples
+50. Missing_Call_Rate_Control : calculated from “NA” genotype calls in control samples; for variant quality QC
+51. Missing_Call_Rate_Case : calculated from “NA” genotype calls in case samples; for variant quality QC
+52. Missing_Call_Rate_All : calculated from “NA” genotype calls in all samples; for variant quality QC
+53. Filter : VQSR filter status; for variant quality QC
+54. Control_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in control samples
+55. Control_0 : no. of “0” (homozygous for reference allele) genotype calls in control samples
+56. Control_1 : no. of “1” (heterozygous) genotype calls in control samples
+57: Control_2 : no. of “2” (homozygous for alternate allele) genotype calls in control samples
+58: Case_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in case samples
+59. Case_0 : no. of “0” (homozygous for reference allele) genotype calls in case samples
+60: Case_1 : no. of “1” (heterozygous) genotype calls in case samples
+61: Case_2 : no. of “2” (homozygous for alternate allele) genotype calls in case samples
+62: Pmiss : p-value for differential missingness between cases and controls; for variant quality QC
+63: Pmiss_OddRatio : odds ratio for differential missingness between cases and controls; for variant quality QC
+64: Pmiss_Log_OR : (log base 10) of odds ratio for differential missingness between cases and controls; for variant quality QC
+65: Pmiss_abs_logOR : absolute value of (log base 10) odds ratio for differential missingness between cases and controls; for variant quality QC
+66: total : total as calculated in 2 x 2 Chi-squared for pmiss calculation; for variant quality QC
+67: HWE_ctrl_pval : p-value of Hardy-Weinberg equilibrium test for controls; for variant quality QC
+68: Chr: columns here onwards are merged from samplegenotype_sorted_pmiss_hwe file
+69: Position
+70: Ref
+71: Alt
+72: TranscriptID
+73 + n: Per-sample genotype (x N sample columns)
+74 + n: Allele_Freq_Control
+75 + n: Allele_Freq_Case
+76 + n: Allele_Freq_All_Samples
+77 + n: Missing_Call_Rate_Control
+78 + n: Missing_Call_Rate_Case
+79 + n: Missing_Call_Rate_All
+80 + n: Filter
+81 + n: Control_NA
+82 + n: Control_0
+83 + n: Control_1
+84 + n: Control_2
+85 + n: Case_NA
+86 + n: Case_0
+87 + n: Case_1
+88 + n: Case_2
+89 + n: Pmiss
+90 + n: Pmiss_OddRatio
+91 + n: Pmiss_Log_OR
+92 + n: Pmiss_abs_logOR
+93 + n: total
+94 + n: HWE_ctrl_pval
 ```
