@@ -177,9 +177,9 @@ perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_
 - Allele_Freq_Control
 - Allele_Freq_Case
 - Allele_Freq_All_Samples
-- Call_Rate_Control
-- Call_Rate_Case
-- Call_Rate_All
+- Missing_Call_Rate_Control
+- Missing_Call_Rate_Case
+- Missing_Call_Rate_All
 - Filter
 - Control_NA
 - Control_0
@@ -204,9 +204,9 @@ perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_
 - Allele_Freq_Control
 - Allele_Freq_Case
 - Allele_Freq_All_Samples
-- Call_Rate_Control
-- Call_Rate_Case
-- Call_Rate_All
+- Missing_Call_Rate_Control
+- Missing_Call_Rate_Case
+- Missing_Call_Rate_All
 - Filter
 - Control_NA
 - Control_0
