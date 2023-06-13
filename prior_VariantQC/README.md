@@ -1,7 +1,8 @@
 # Steps prior to Variant Quality Filtering
 Variant quality control procedures were performed using VCFtools (version 0.1.16), BCFtools (version 1.9) and PLINK (version 1.9). Low quality genotype calls (DP <8 and GQ <20) were excluded. At the filtering step (conducted later), variants with low call rates in cases, controls and all samples respectively (<95%), failed tests for Hardy-Weinberg equilibrium (P<1×10-6) and high differential missingness between cases and controls (P<1×10-4) were excluded from further analyses.
 
-Code here were conducted before variant quality filtering. At the filtering stage, variant QC was conducted together with variant pathogenicity prediction filtering. 
+Code here were conducted before variant quality filtering and based on GRCh37 (hg19) genomic coordinates. 
+At the filtering stage, variant QC was conducted together with variant pathogenicity prediction filtering. 
 
 
 # Requirements
@@ -54,10 +55,10 @@ Output: *.hwe
 
 ## 4. Calculate quality control metrics (missing call rates) and genotype count summary
 Genotype codes:
-•	“NA” – no calls or fail DP, GQ filter
-•	“0” – homozygous for reference allele
-•	“1” – heterozygous
-•	“2” – homozygous for alternate allele
+- “NA” – no calls or fail DP, GQ filter
+- “0” – homozygous for reference allele
+- “1” – heterozygous
+- “2” – homozygous for alternate allele
 
 ``` bash
 perl pheno_genotyping_DPGQ.pl <VCF> <samplelist.txt> <output dir/>
