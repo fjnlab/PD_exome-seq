@@ -62,7 +62,7 @@ Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out
 8. Uploaded_variation : format takes chr:position:ref:alt; from VEP output
 9. Location : variant genomic coordinates based on GRCh37 (hg19); from VEP output
 10. Allele : alternate allele; from VEP output
-11. Transcript : ENSTID; ; from VEP output
+11. Transcript : ENSTID; from VEP output
 12. Consequence : predicted effects of allele on transcript, see [Ensembl Calculated consequences](https://asia.ensembl.org/info/genome/variation/prediction/predicted_data.html) for the exhaustive list on consequence types
 13. Intron_variant : "YES" or "NO" if variant is in intronic region
 14. Exon_number : Affected exon numbering, format takes exon number/total; VEP output
