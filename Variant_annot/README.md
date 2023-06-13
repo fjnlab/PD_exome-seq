@@ -187,14 +187,14 @@ perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_
 51. Missing_Call_Rate_Case : calculated from “NA” genotype calls in case samples; for variant quality QC
 52. Missing_Call_Rate_All : calculated from “NA” genotype calls in all samples; for variant quality QC
 53. Filter : VQSR filter status; for variant quality QC
-54. Control_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in control samples
-55. Control_0 : no. of “0” (homozygous for reference allele) genotype calls in control samples
-56. Control_1 : no. of “1” (heterozygous) genotype calls in control samples
-57: Control_2 : no. of “2” (homozygous for alternate allele) genotype calls in control samples
-58: Case_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in case samples
-59. Case_0 : no. of “0” (homozygous for reference allele) genotype calls in case samples
-60: Case_1 : no. of “1” (heterozygous) genotype calls in case samples
-61: Case_2 : no. of “2” (homozygous for alternate allele) genotype calls in case samples
+54. Control_NA : number of “NA” (no calls or fail variant quality QC) genotype calls in control samples
+55. Control_0 : number of “0” (homozygous for reference allele) genotype calls in control samples
+56. Control_1 : number of “1” (heterozygous) genotype calls in control samples
+57: Control_2 : number of “2” (homozygous for alternate allele) genotype calls in control samples
+58: Case_NA : number of “NA” (no calls or fail variant quality QC) genotype calls in case samples
+59. Case_0 : number of “0” (homozygous for reference allele) genotype calls in case samples
+60: Case_1 : number of “1” (heterozygous) genotype calls in case samples
+61: Case_2 : number of “2” (homozygous for alternate allele) genotype calls in case samples
 62: Pmiss : Fisher's test p-value for differential missingness between cases and controls; for variant quality QC
 63: Pmiss_OddRatio : odds ratio for differential missingness between cases and controls; for variant quality QC
 64: Pmiss_Log_OR : (log base 10) of odds ratio for differential missingness between cases and controls; for variant quality QC
