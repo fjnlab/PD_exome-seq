@@ -1,0 +1,125 @@
+# Steps prior to Variant Quality Filtering
+Variant quality control procedures were performed using VCFtools (version 0.1.16), BCFtools (version 1.9) and PLINK (version 1.9). Low quality genotype calls (DP <8 and GQ <20) were excluded. At the filtering step (conducted later), variants with low call rates in cases, controls and all samples respectively (<95%), failed tests for Hardy-Weinberg equilibrium (P<1×10-6) and high differential missingness between cases and controls (P<1×10-4) were excluded from further analyses.
+
+Code here were conducted before variant quality filtering. At the filtering stage, variant QC was conducted together with variant pathogenicity prediction filtering. 
+
+
+# Requirements
+- PERL
+- bgzip (as part of [BCFtools](http://www.htslib.org/download/), HTSlib utils)
+- tabix (as part of [BCFtools](http://www.htslib.org/download/), HTSlib utils)
+- [VCFtools](https://vcftools.github.io/index.html)
+- [PLINK v1.90](https://www.cog-genomics.org/plink/)
+- PERL
+- PERL module [Text::NSP::Measures::2D::Fisher::twotailed](https://metacpan.org/pod/Text::NSP::Measures::2D::Fisher::twotailed)
+
+
+# Usage
+## 1. Generate VCF filtered file based on read depth per sample site (DP) and genotype quality (GQ)
+``` bash
+./filter_DP8GQ20_vcf.sh
+```
+
+Input: variants.vcf.gz
+
+Output: variants.filtered_DPGQ.vcf.gz
+
+
+## 2. Generate unique identifier (also for VEP annotation later) from `variants.filtered_DPGQ.vcf`
+``` bash
+./run_uniqueID_vcf.sh
+```
+
+Input: variants.filtered_DPGQ.vcf.gz
+
+Output: variants.filtered_DPGQ.uniqID.vcf.gz
+
+
+## 3. Calculate Hardy-Weinberg Equilibrium (HWE) using PLINK (v1.90)
+See also https://zzz.bwh.harvard.edu/plink/summary.shtml#hardy
+
+``` bash
+plink --vcf ${FILTERED_VCF_PREFIX}.vcf.gz --make-bed --double-id --out ${FILTERED_VCF_PREFIX} --allow-no-sex
+
+##edit fam file for each sample’s phenotype and gender
+vim ${FILTERED_VCF_PREFIX}.fam  
+
+plink --bfile ${FILTERED_VCF_PREFIX} --hardy --out ${FILTERED_VCF_PREFIX}-hwe  ## then extract p-val of UNAFF 
+
+```
+Input: variants.filtered_DPGQ PLINK formatted files (*.bed, *.bim, *.fam)
+
+Output: *.hwe
+
+
+## 4. Calculate quality control metrics (missing call rates) and genotype count summary
+Genotype codes:
+•	“NA” – no calls or fail DP, GQ filter
+•	“0” – homozygous for reference allele
+•	“1” – heterozygous
+•	“2” – homozygous for alternate allele
+
+``` bash
+perl pheno_genotyping_DPGQ.pl <VCF> <samplelist.txt> <output dir/>
+cat samplegenotype_unsorted | awk 'NR==1; NR > 1 {print $0 | "sort -V -k1,1 -k2,2n"}' > samplegenotype_sorted   ##sort by genomic position
+
+<samplelist.txt> - A tab-delimited sample list (without header) with format: SampleName Phenotype (as "case" or "control")
+```
+
+Input: variants.filtered_DPGQ.vcf, samplelist.txt
+
+Output: samplegenotype_sorted
+
+
+## 5. Calculate P(miss) for each variant
+- Calculated columns (“Pmiss”, “Pmiss_OddRatio”, Pmiss_Log_OR”, Pmiss_abs_logOR”, “total”) added to SampleGenotype_sorted
+- NOTE: ensure last 8 columns of input file `samplegenotype_sorted` are the genotype count summary (“Control_NA”, “Control_0”, “Control_1”, “Control_2”, “Case_NA”, “Case_0”, “Case_1”, “Case_2”)
+
+``` bash
+perl calculate_pmiss.pl samplegenotype_sorted samplegenotype_sorted_pmiss
+``` 
+
+Input: samplegenotype_sorted
+
+Output: samplegenotype_sorted_pmiss
+
+
+## 6. Combine all variant metrics: Merge `samplegenotype_sorted_pmiss` and `*.hwe`
+``` bash
+perl merge_geno_pmiss_hwe.pl <*.hwe output> samplegenotype_sorted_pmiss samplegenotype_sorted_pmiss_hwe
+```
+
+## 7. Combined variant metrics output with the following information (see example file `samplegenotype_sorted_pmiss_hwe`)
+``` bash
+1. Chr
+2. Position
+3. Ref
+4. Alt
+5. Per-sample genotype (x N sample columns)
+6. Allele_Freq_Control : minor allele frequencies in control samples
+7. Allele_Freq_Case : minor allele frequencies in case samples
+8. Allele_Freq_All_Samples : minor allele frequencies in all samples
+9. Missing_Call_Rate_Control : calculated from “NA” genotype calls in control samples; for variant quality QC
+10. Missing_Call_Rate_Case : calculated from “NA” genotype calls in case samples; for variant quality QC
+11. Missing_Call_Rate_All : calculated from “NA” genotype calls in all samples; for variant quality QC
+12. Filter : VQSR filter status; for variant quality QC
+13. Control_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in control samples
+14. Control_0 : no. of “0” (homozygous for reference allele) genotype calls in control samples
+15. Control_1 : no. of “1” (heterozygous) genotype calls in control samples
+16: Control_2 : no. of “2” (homozygous for alternate allele) genotype calls in control samples
+17: Case_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in case samples
+18. Case_0 : no. of “0” (homozygous for reference allele) genotype calls in case samples
+19: Case_1 : no. of “1” (heterozygous) genotype calls in case samples
+20: Case_2 : no. of “2” (homozygous for alternate allele) genotype calls in case samples
+21: Pmiss : p-value for differential missingness between cases and controls; for variant quality QC
+22: Pmiss_OddRatio : odds ratio for differential missingness between cases and controls; for variant quality QC
+23: Pmiss_Log_OR : (log base 10) of odds ratio for differential missingness between cases and controls; for variant quality QC
+24: Pmiss_abs_logOR : absolute value of (log base 10) odds ratio for differential missingness between cases and controls; for variant quality QC
+25: total : total as calculated in 2 x 2 Chi-squared for pmiss calculation; for variant quality QC
+26: HWE_ctrl_pval : p-value of Hardy-Weinberg equilibrium test for controls; for variant quality QC
+```
+
+
+
+
+
