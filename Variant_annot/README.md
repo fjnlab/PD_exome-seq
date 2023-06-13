@@ -40,38 +40,7 @@ Output files: variants.DP8GQ20_filtered.uniqID.vep.table.out*
 
 
 
-### 3. Filter VEP output & extract following columns 
-- Chr
-- Position
-- Ref
-- Alt
-- TranscriptID
-- GeneID
-- GeneName
-- #Uploaded_variation
-- Location
-- Allele
-- Transcript
-- Consequence
-- Intron_variant
-- Exon_number
-- Intron_number
-- Protein_pos
-- Amino_acids
-- HGVSc
-- HGVSp
-- SnpID
-- Impact
-- Strand
-- Variant_class
-- Biotype
-- Polyphen2_Transcriptid
-- Uniprot_acc_Polyphen2
-- LoF
-- LoF_filter
-- LoF_info
-- CANONICAL
-
+### 3. Filter VEP output & extract relevant columns 
 ```bash
 ## to extract required VEP annotation columns
 perl VEPannot_extract.pl variants.DP8GQ20_filtered.uniqID.vep.table.out variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out
@@ -80,6 +49,42 @@ perl VEPannot_extract.pl variants.DP8GQ20_filtered.uniqID.vep.table.out variants
 Input: variants.DP8GQ20_filtered.uniqID.vep.table.out
 
 Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out
+
+
+``` bash
+1. Chr : chromosomal position of variant
+2. Position : variant genomic coordinates based on GRCh37 (hg19)
+3. Ref : reference allele
+4. Alt : alternate allele
+5. TranscriptID : ENSTID format (Ensembl transcript ID)
+6. GeneID : ENSGID format (Ensembl gene ID)
+7. GeneName : Gene symbol
+8. Uploaded_variation : format takes chr:position:ref:alt; from VEP output
+9. Location : variant genomic coordinates based on GRCh37 (hg19); from VEP output
+10. Allele : alternate allele; from VEP output
+11. Transcript : ENSTID; ; from VEP output
+12. Consequence : predicted effects of allele on transcript, see [Ensembl Calculated consequences](https://asia.ensembl.org/info/genome/variation/prediction/predicted_data.html) for the exhaustive list on consequence types
+13. Intron_variant : "YES" or "NO" if variant is in intronic region
+14. Exon_number : Affected exon numbering, format takes exon number/total; VEP output
+15. Intron_number : Affected intron numbering, format takes exon number/total; VEP output
+16. Protein_pos : Relative position of amino acid in protein; VEP output
+17. Amino_acids : Reference and variant amino acids; VEP output
+18. HGVSc : HGVS coding sequence name; VEP output
+19. HGVSp : HGVS protein sequence name; VEP output
+20. SnpID : Identifier(s) of co-located known variants; VEP output
+21. Impact : Subjective impact classification of consequence type; VEP output
+22. Strand : 1/-1 for strand; VEP output
+23. Variant_class : SO variant class; VEP output
+24. Biotype : Biotype of transcript or regulatory feature; VEP output
+25. Polyphen2_Transcriptid : Ensembl transcript ids (Multiple entries separated by ";"); dbNSFP VEP plugin output
+26. Uniprot_acc_Polyphen2 : Uniprot accession number provided by PolyPhen2 (Multiple entries separated by ";"); dbNSFP VEP plugin output
+27. Polyphen2_HDIV_pred : Polyphen2 prediction based on HumDiv Model ("D" probably damaging, "P" possibly damaging, "B" benign); dbNSFP VEP plugin output
+28. Polyphen2_HVAR_pred : Polyphen2 prediction based on HumVar Model ("D" probably damaging, "P" possibly damaging, "B" benign); dbNSFP VEP plugin output
+29. LoF : Loss-of-function annotation (HC = High Confidence; LC = Low Confidence); LOFTEE VEP plugin output
+30. LoF_filter : Reason for LoF not being HC; LOFTEE VEP plugin output
+31. LoF_info :  Info used for LoF annotation; LOFTEE VEP plugin output
+32. CANONICAL : if annotation is based on Ensembl canonical transcript
+```
 
 
 
