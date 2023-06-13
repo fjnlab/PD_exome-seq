@@ -201,7 +201,7 @@ Exon_number : Affected exon numbering, format takes exon number/total; VEP outpu
 64: Pmiss_abs_logOR : absolute value of (log base 10) odds ratio for differential missingness between cases and controls; for variant quality QC
 65: total : total as calculated in 2 x 2 Chi-squared for pmiss calculation; for variant quality QC
 66: HWE_ctrl_pval : p-value of Hardy-Weinberg equilibrium test for controls; for variant quality QC
-67: Chr: columns here onwards are merged from samplegeno.tsv file
+67: Chr: columns here onwards are merged from samplegenotype_sorted_pmiss_hwe file
 68: Position
 69: Ref
 70: Alt
