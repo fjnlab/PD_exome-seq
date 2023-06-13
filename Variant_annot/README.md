@@ -195,7 +195,7 @@ perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_
 59. Case_0 : no. of “0” (homozygous for reference allele) genotype calls in case samples
 60: Case_1 : no. of “1” (heterozygous) genotype calls in case samples
 61: Case_2 : no. of “2” (homozygous for alternate allele) genotype calls in case samples
-62: Pmiss : p-value for differential missingness between cases and controls; for variant quality QC
+62: Pmiss : Fisher's test p-value for differential missingness between cases and controls; for variant quality QC
 63: Pmiss_OddRatio : odds ratio for differential missingness between cases and controls; for variant quality QC
 64: Pmiss_Log_OR : (log base 10) of odds ratio for differential missingness between cases and controls; for variant quality QC
 65: Pmiss_abs_logOR : absolute value of (log base 10) odds ratio for differential missingness between cases and controls; for variant quality QC
