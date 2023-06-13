@@ -92,10 +92,10 @@ perl merge_geno_pmiss_hwe.pl <*.hwe output> samplegenotype_sorted_pmiss samplege
 
 ## 7. Combined variant metrics output with the following information (see example file `samplegenotype_sorted_pmiss_hwe`)
 ``` bash
-1. Chr
-2. Position
-3. Ref
-4. Alt
+1. Chr : chromosomal position of variant
+2. Position : variant genomic coordinates based on GRCh37 (hg19)
+3. Ref : reference allele
+4. Alt : alternate allele
 5. Per-sample genotype (x N sample columns)
 6. Allele_Freq_Control : minor allele frequencies in control samples
 7. Allele_Freq_Case : minor allele frequencies in case samples
