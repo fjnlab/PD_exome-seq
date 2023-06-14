@@ -10,7 +10,7 @@ Code here was conducted at the preQC stage and based on GRCh37 (hg19) genomic co
 - R or Rstudio, and RColorBrewer library
 
 # Usage
-Input: Pre-QC biallelic snps filtered for DP, GQ, PASS VQSR, CDS region, canonical
+Input: Pre-QC biallelic snps dataset filtered for DP, GQ, PASS VQSR, CDS region, canonical
 
 | Step | Scripts |
 | -----| ------- |
