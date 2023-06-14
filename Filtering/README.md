@@ -6,7 +6,7 @@ Variant quality score recalibration (VQSR) was performed to exclude low quality 
 
 ***Variant pathogenicity filtering***
 
-Functional predictions for missense variants were derived from PolyPhen-2 (version 2.2.3r406) while the VEP plugin LOFTEE (version 1.0.3) was used for functional prediction of stop gain or stop loss, splice site disrupting and frameshift variants. Each variant was classified as damaging based on PolyPhen2 (probably or possibly damaging) and LOFTEE (high confidence) predictions.
+Functional predictions for missense variants were derived from PolyPhen-2 (v2.2.3r406) while the VEP plugin LOFTEE (v1.0.3) was used for functional prediction of stop gain or stop loss, splice site disrupting and frameshift variants. Each variant was classified as damaging based on PolyPhen2 (probably or possibly damaging) and LOFTEE (high confidence) predictions.
 
 Genome Aggregation Database (gnomAD) population-level frequencies (v2.1.1) were added using ANNOVAR and used for classifying rare variants (MAF ≤1%).
 
