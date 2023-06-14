@@ -22,7 +22,7 @@ Input: Pre-QC biallelic snps dataset filtered for DP, GQ, PASS VQSR, CDS region,
 | ***Sample quality control step 6*** </br> Removed samples that are PC1-PC4 outliers in ancestry principal component analysis | fpca.sh, fpca-plots.r |
 
 
-[^1]: PLINK user group topic ["On gender calling"](https://groups.google.com/forum/#!topic/plink2-users/28LESfNj64A)
+[^1]: PLINK users Google-group topic ["On gender calling"](https://groups.google.com/forum/#!topic/plink2-users/28LESfNj64A)
 
 
 
