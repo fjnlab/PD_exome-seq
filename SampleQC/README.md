@@ -14,7 +14,7 @@ Input: Pre-QC biallelic snps dataset filtered for DP, GQ, PASS VQSR, CDS region,
 
 | Step | Scripts |
 | -----| ------- |
-| ***Sample quality control step 1: Gender discrepancies*** </br> Gender on patient records discordant with sex genetically inferred from exome sequencing data | plink_gendercheck_chrXY_Xcount.sh or plink_gendercheck_chrXY_Ycount.sh |
+| ***Sample quality control step 1: Gender discrepancies*** </br> Gender on patient records discordant with sex genetically inferred from exome sequencing data | plink_gendercheck_chrXY_Xcount.sh or plink_gendercheck_chrXY_Ycount.sh[^1] |
 | ***Sample quality control step 2: Genotype discordance*** </br> Sample exome genotype discordant (<95%) with genome-wide association assay (GWAS) data | genotype_concordance.sh |
 | ***Sample quality control step 3*** </br> Removed samples with: </br> (a) high singleton counts (>500) and/or </br> (b) high % het snps (>3.5 standard deviations from mean) | sample_summarize.pl | 
 | ***Sample quality control step 4*** </br> Samples with high genotype missing calls (>95%) | prior_ibd.sh |
@@ -22,6 +22,7 @@ Input: Pre-QC biallelic snps dataset filtered for DP, GQ, PASS VQSR, CDS region,
 | ***Sample quality control step 6*** </br> Removed samples that are PC1-PC4 outliers in ancestry principal component analysis | fpca.sh, fpca-plots.r |
 
 
+[^1]: PLINK user group topic ["On gender calling"](https://groups.google.com/forum/#!topic/plink2-users/28LESfNj64A)
 
 
 
