@@ -208,26 +208,26 @@ perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_
 70: Ref
 71: Alt
 72: TranscriptID
-73 + n: Per-sample genotype (x N sample columns)
-74 + n: Allele_Freq_Control
-75 + n: Allele_Freq_Case
-76 + n: Allele_Freq_All_Samples
-77 + n: Missing_Call_Rate_Control
-78 + n: Missing_Call_Rate_Case
-79 + n: Missing_Call_Rate_All
-80 + n: Filter
-81 + n: Control_NA
-82 + n: Control_0
-83 + n: Control_1
-84 + n: Control_2
-85 + n: Case_NA
-86 + n: Case_0
-87 + n: Case_1
-88 + n: Case_2
-89 + n: Pmiss
-90 + n: Pmiss_OddRatio
-91 + n: Pmiss_Log_OR
-92 + n: Pmiss_abs_logOR
-93 + n: total
-94 + n: HWE_ctrl_pval
+73 - 9882: Per-sample genotype (x N sample columns, i.e. 9810 total samples in Discovery cohort)
+9883: Allele_Freq_Control
+9884: Allele_Freq_Case
+9885: Allele_Freq_All_Samples
+9886: Missing_Call_Rate_Control
+9887: Missing_Call_Rate_Case
+9888: Missing_Call_Rate_All
+9889: Filter
+9890: Control_NA
+9891: Control_0
+9892: Control_1
+9893: Control_2
+9894: Case_NA
+9895: Case_0
+9896: Case_1
+9897: Case_2
+9898: Pmiss
+9899: Pmiss_OddRatio
+9900: Pmiss_Log_OR
+9901: Pmiss_abs_logOR
+9902: total
+9903: HWE_ctrl_pval
 ```
