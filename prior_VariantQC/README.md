@@ -6,7 +6,6 @@ At the filtering stage, variant QC was conducted together with variant pathogeni
 
 
 # Requirements
-- PERL
 - bgzip (as part of [BCFtools](http://www.htslib.org/download/), HTSlib utils)
 - tabix (as part of [BCFtools](http://www.htslib.org/download/), HTSlib utils)
 - [VCFtools](https://vcftools.github.io/index.html)
