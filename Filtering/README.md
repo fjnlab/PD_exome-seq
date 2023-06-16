@@ -54,8 +54,17 @@ LOF	HC
 
 ### (c) Filter for benign variants (Rare pathogenic set ***minus*** rare deleterious set)
 ``` bash
-TBC
+## Rare pathogenic variants – rare deleterious
+## output directory with backslash “/” included, ie “output/” without quotes
+mkdir <rare_qced_benign>
+perl extract_benign.pl <rare_qced dir>/variantannot_samplegeno_final_all_results_filtered.tsv <rare_qced_del dir>l/variantannot_samplegeno_final_all_results_filtered.tsv <rare_qced_benign/>
+
 ```
+
+Input files: variantannot_samplegeno_final_all_results_filtered.tsv in rare_qced, rare_qced_del directories respectively
+Filtered lists in output directory: variantannot_samplegeno_final_all_results_filtered.tsv, samplegeno_filtered.tsv
+
+
 
 ### (d) Filter for CDS variants (to obtain preQC biallelic snps to conduct sampleQC, see example file `preQC_CDS_params.txt`)
 ```
