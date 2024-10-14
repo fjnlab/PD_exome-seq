@@ -17,7 +17,9 @@ Steps for coverage, variant calling, joint calling, VQSR, split to different all
 Our pipeline is based on GRCh37 (hg19) genomic coordinates.
 
 
-![image](https://github.com/fjnlab/PD_exome-seq/assets/58157134/fcfc0263-a844-46c7-a1bf-0ea6fd4fdfa2)
+![image](https://github.com/user-attachments/assets/3c0da211-004d-498b-a94d-75f715a56c1f)
+
+
 
 
 ## Contact
