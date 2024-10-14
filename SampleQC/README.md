@@ -19,7 +19,7 @@ Input: Pre-QC biallelic snps dataset filtered for DP, GQ, PASS VQSR, CDS region,
 | ***Sample quality control step 3*** </br> Removed samples with: </br> (a) high singleton counts (>500) and/or </br> (b) high % het snps (>3.5 standard deviations from mean) | sample_summarize.pl <br/><br/> Usage: perl sample_summarize.pl <preQC_CDS dir/variantannot_samplegeno_final_all_results_filtered.tsv> <preQC_CDS dir/samplegeno_filtered.tsv> <output_dir/> <br/><br/> - include "/" backslash in output dir name| 
 | ***Sample quality control step 4*** </br> Samples with high genotype missing calls (>95%) | prior_ibd.sh |
 | ***Sample quality control step 5*** </br> Removed samples that: </br> (a) high genotype missing calls in steps prior to [Identity-By-Descent (IBD)](https://zzz.bwh.harvard.edu/plink/ibdibs.shtml) test (MAF >1%, excluded SNPs in linkage disequilibrium, genotype missing calls >95%) </br> (b) fail IBD test (IBD >0.125) | ibd.sh |
-| ***Sample quality control step 6*** </br> Removed samples that are PC1-PC4 outliers in ancestry principal component analysis | fpca.sh, fpca-plots.r |
+| ***Sample quality control step 6*** </br> Removed samples that are outliers in ancestry principal component analysis | fpca.sh, fpca-plots.r |
 
 
 [^1]: PLINK users Google-group topic ["On gender calling"](https://groups.google.com/forum/#!topic/plink2-users/28LESfNj64A)
