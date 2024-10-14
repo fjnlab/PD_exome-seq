@@ -41,7 +41,7 @@ See also https://zzz.bwh.harvard.edu/plink/summary.shtml#hardy
 ``` bash
 plink --vcf ${FILTERED_VCF_PREFIX}.vcf.gz --make-bed --double-id --out ${FILTERED_VCF_PREFIX} --allow-no-sex
 
-##edit fam file for each sample’s phenotype and gender
+##edit fam file for each sample’s phenotype and gender first, BEFORE running the next PLINK command
 vim ${FILTERED_VCF_PREFIX}.fam  
 
 plink --bfile ${FILTERED_VCF_PREFIX} --hardy --out ${FILTERED_VCF_PREFIX}-hwe  ## then extract p-val of UNAFF 
