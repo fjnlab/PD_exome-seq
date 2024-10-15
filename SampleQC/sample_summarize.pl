@@ -1,7 +1,6 @@
 #!/usr/bin/perl -w
 ## calculates %het_snps, singleton counts for each sample - sampleQC stage
 ##
-## for manuscript purpose
 ##########################################################################################
 
 use strict;
