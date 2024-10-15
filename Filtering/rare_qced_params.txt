@@ -1,0 +1,11 @@
+CONSEQUENCE	missense_variant	or	stop_lost	or	start_lost	or	coding_sequence_variant	or	protein_altering_variant	or	stop_gained	or	frameshift_variant	or	inframe_insertion	or	inframe_deletion	or	splice_region_variant	or	splice_donor_5th_base_variant	or	splice_donor_region_variant	or	splice_polypyrimidine_tract_variant	or	splice_donor_variant	or	splice_acceptor_variant
+INTRON_VARIANT	NO
+CANONICAL	YES
+GNOMAD_EXOMES_EAS	NA	or	<=0.01
+GNOMAD_GENOMES_EAS	NA	or	<=0.01
+FILTER	PASS
+MCR_CASE	<=0.05
+MCR_CTRL	<=0.05
+MCR_ALL	<=0.05
+P_MISS	>=0.0001
+HWE_CTRL_PVAL	>=0.000001
