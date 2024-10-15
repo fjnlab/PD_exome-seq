@@ -9,7 +9,7 @@ Code here is based on GRCh37 (hg19) genomic coordinates.
 - [dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP) (v3.5a) for VEP plugin
 - [LOFTEE](https://github.com/konradjk/loftee) (v1.0.3) for VEP plugin
 - [ANNOVAR](https://annovar.openbioinformatics.org/en/latest/) (dated version "2020-06-07" used at time of analysis) to extract Genome Aggregation Database (gnomAD) population-level frequencies (v2.1.1)
-- [PolyPhen-2](http://genetics.bwh.harvard.edu/pph2/) tool
+- [PolyPhen-2](http://genetics.bwh.harvard.edu/pph2/) tool (v2.2.3r406)
 
 
 ## Usage
