@@ -8,7 +8,7 @@ Code here is based on GRCh37 (hg19) genomic coordinates.
 - [Ensembl VEP](https://asia.ensembl.org/info/docs/tools/vep/script/vep_download.html) (v104) and [cache](https://asia.ensembl.org/info/docs/tools/vep/script/vep_cache.html) database for GRCh37
 - [dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP) (v3.5a) for VEP plugin
 - [LOFTEE](https://github.com/konradjk/loftee) (v1.0.3) for VEP plugin
-- [ANNOVAR](https://annovar.openbioinformatics.org/en/latest/) (dated version "2020-06-07") to extract Genome Aggregation Database (gnomAD) population-level frequences
+- [ANNOVAR](https://annovar.openbioinformatics.org/en/latest/) (dated version "2020-06-07" used at time of analysis) to extract Genome Aggregation Database (gnomAD) population-level frequences
 - [PolyPhen-2](http://genetics.bwh.harvard.edu/pph2/) tool
 
 
