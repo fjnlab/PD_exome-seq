@@ -62,6 +62,7 @@ perl extract_benign.pl <rare_qced dir>/variantannot_samplegeno_final_all_results
 ```
 
 Input files: variantannot_samplegeno_final_all_results_filtered.tsv in rare_qced, rare_qced_del directories respectively
+
 Filtered lists in output directory: variantannot_samplegeno_final_all_results_filtered.tsv, samplegeno_filtered.tsv
 
 
