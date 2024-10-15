@@ -96,7 +96,7 @@ Format input file `variants.filtered_DPGQ.uniqID.vcf` for ANNOVAR according to h
 ```bash
 ## we have modified output of convert2annovar.pl, to facilitate merging of annotation output later
 ## convert2annovar.pl is provided as part of ANNOVAR package
-perl ${$ANNOVAR_DIR}/convert2annovar.pl -format vcf4 -allsample -withfreq -includeinfo variants.DP8GQ20_filtered.uniqID.vcf > variants.avlist.tmp
+perl ${ANNOVAR_DIR}/convert2annovar.pl -format vcf4 -allsample -withfreq -includeinfo variants.DP8GQ20_filtered.uniqID.vcf > variants.avlist.tmp
 cut -f1-8,11 variants.avlist.tmp > variants.avlist
 
 ## using ANNOVAR to extract gnomAD exome, gnomAD genome population AF
