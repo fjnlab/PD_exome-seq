@@ -12,7 +12,7 @@ conda env create -n essentials_env --file essentials_env.yml
 ```
 
 ## Input files required
-### 1)	annotated variant list `rare_del_variantlist.tsv`
+### 1)	annotated variant list `variantannot_samplegeno.tsv` (see example files)
 - based on filtered annotation output of `filter_annotation.pl` script
 - contains matrix of rare deleterious variants with variant annotations (VEP annotations, pathogenicity predictions, etc..) and per sample genotype calls.
 
