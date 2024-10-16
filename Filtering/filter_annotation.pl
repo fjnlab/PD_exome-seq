@@ -7,14 +7,14 @@ genotypingVariants=$2
 parameter=$3    
 outdir=$4
 
-HOME="/rfs-storageservice/GIS/Projects/HG6/mmlian/PD_Intl_WES/manuscript_scripts/annot"
+HOME="."
 
 if [ $# -lt 4 ]
 then
         echo "Usage:"
         echo "	filter_annotation.pl [arguments] <variantannot_samplegeno.tsv> <samplegeno.tsv> <parameters.txt> <outputFolder/>"
         echo "	Function  : To do snp filtering based on user-defined criteria for annotated variant list"
-        echo "	Example   : perl filter_annotation.pl variantannot_samplegeno.tsv samplegeno.tsv v2.3_ns_MAF1_del_can_params.txt v2.3_ns_MAF1_del_can/"
+        echo "	Example   : perl filter_annotation.pl variantannot_samplegeno.tsv samplegeno.tsv rare_qced_params.txt rare_qced/"
 	echo "	Argument1 : Annotated Main TSV file"
         echo "	Argument2 : Genotypes file"
 	echo "	Argument3 : Parameter/criteria file"
