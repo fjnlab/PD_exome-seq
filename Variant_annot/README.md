@@ -121,7 +121,7 @@ Predictions based on canonical ENST_ID used. See [`resources/allcanonicalvariant
 Combine VEP annotation, population level gnomAD frequencies, PolyPhen-2 prediction together with genotypes of pass QC variants to give the matrix (see example files [`variantannot_samplegeno.tsv`](variantannot_samplegeno.tsv), [`samplegeno.tsv`](samplegeno.tsv)) with the following headers:
 
 
-#### Combine variant annotation outputs
+#### (a) Combine variant annotation outputs
 ``` bash
 perl merge_VEP_gnomad.pl variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out variants.avlist.hg19_gnomad211_exome_dropped variants.avlist.hg19_gnomad211_genome_dropped
 ```
@@ -132,7 +132,7 @@ Output: variantannot.tsv
 
 
 
-#### Combine variantannot.tsv + samplegenotype_sorted_pmiss_hwe
+#### (b) Combine variantannot.tsv + samplegenotype_sorted_pmiss_hwe
 ``` bash
 perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_hwe
 ```
