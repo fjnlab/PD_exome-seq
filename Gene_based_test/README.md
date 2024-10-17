@@ -36,8 +36,3 @@ Output files:
 - rare_del_gene-based_Fishers-CMH.txt: Gene-based test results (see [`rare_del_gene-based_Fishers-CMH.txt.descriptor`](/Gene_based_test/rare_del_gene-based_Fishers-CMH.txt.descriptor)
 - stderr-out_rare-del_gene-based.txt: Script running errors, warning and message (see example output)
 
-39. CMH_SGMAL_HK_KR_TW_OR: Stratified Cochran-Mantel-Haenszel gene-based test odds ratio for Discovery cohort
-40. CMH_SGMAL_HK_KR_TW_confint: Stratified Cochran-Mantel-Haenszel gene-based test lower 95% confidence interval for Discovery cohort
-41. CMH_SGMAL_HK_KR_TW_confint2: Stratified Cochran-Mantel-Haenszel gene-based test upper 95% confidence interval for Discovery cohort
-42. CMH_SGMAL_HK_KR_TW_statistic: Stratified Cochran-Mantel-Haenszel gene-based test statistics for Discovery cohort
-```
