@@ -52,6 +52,7 @@ Output file: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out (See [`vari
 
 ```
 ## variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out columns description
+
 1. Chr : chromosomal position of variant
 2. Position : variant genomic coordinates based on GRCh37 (hg19)
 3. Ref : reference allele
@@ -143,6 +144,7 @@ Output files: samplegeno.tsv, variantannot_samplegeno.tsv (See [`variantannot_sa
 
 ```
 ## variantannot_samplegeno.tsv columns description
+
 1. Chr : chromosomal position of variant
 2. Position : variant genomic coordinates based on GRCh37 (hg19)
 3. Ref : reference allele
