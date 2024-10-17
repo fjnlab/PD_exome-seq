@@ -20,7 +20,7 @@ Code here is based on GRCh37 (hg19) genomic coordinates.
 Input file: variants.filtered_DPGQ.vcf.gz \
 Output file: variants.filtered_DPGQ.uniqID.vcf.gz
 
-
+<br/>
 
 ## 2. Variants annotation was carried out using VEP
 ```bash
@@ -38,6 +38,7 @@ ${VEP} -i ${VCF_IN} --cache --dir_cache ${CACHE_DB} --offline --cache_version 10
 Input file: variants.filtered_DPGQ.uniqID.vcf.gz \
 Output files: variants.DP8GQ20_filtered.uniqID.vep.table.out*
 
+<br/>
 
 
 ## 3. Filter VEP output & extract relevant columns 
@@ -49,7 +50,7 @@ perl VEPannot_extract.pl variants.DP8GQ20_filtered.uniqID.vep.table.out variants
 Input: variants.DP8GQ20_filtered.uniqID.vep.table.out \
 Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out (See [`variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor`](/Variant_annot/variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor))
 
-
+<br/>
 
 
 ## 4. Genome Aggregation Database (gnomAD) population-level frequencies (v2.1.1) were added using ANNOVAR
@@ -67,6 +68,7 @@ perl ${ANNOVAR_DIR}/annotate_variation.pl -build hg19 -filter -dbtype gnomad211_
 perl ${ANNOVAR_DIR}/annotate_variation.pl -build hg19 -filter -dbtype gnomad211_genome $outdir/variants.avlist -otherinfo $ANNOVAR_DIR/humandb/
 ```
 
+<br/>
 
 
 ## 5. PolyPhen-2 predictions
@@ -78,6 +80,7 @@ PolyPhen-2 HDIV predictions for missense variants were [batch queried](http://ge
 
 Predictions based on canonical ENST_ID used. See [`resources/allcanonicalvariants_ID_PolyPhen2.list`](/resources/allcanonicalvariants_ID_PolyPhen2.list). 
 
+<br/>
 
 
 ## 6. Combine variant annotated list with variant genotypes
