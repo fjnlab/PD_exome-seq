@@ -118,7 +118,7 @@ Input format example chr1:1267483 G/A
 
 Predictions corresponding to the canonical transcripts (ENST_ID) were extracted based on UniProt_ID (UniProtKB/Swiss-Prot ID and UniProtKB/TrEMBL ID), UCSC_ID (UCSC Stable ID) or RefSeq_ID (RefSeq peptide ID, accession prefix “NP_”) obtained from [Ensembl BioMart for GRCh37](https://grch37.ensembl.org/biomart/martview).
 
-We have also provided the matched IDs of our annotated variants based on canonical transcripts, see [`resources/allcanonicalvariants_ID_PolyPhen2.list`](https://github.com/fjnlab/PD_exome-seq/blob/main/resources/allcanonicalvariants_ID_PolyPhen2.list)
+We have also provided the matched IDs of our annotated variants based on canonical transcripts, see [`resources/allcanonicalvariants_ID_PolyPhen2.list`](/resources/allcanonicalvariants_ID_PolyPhen2.list)
 
 
 
