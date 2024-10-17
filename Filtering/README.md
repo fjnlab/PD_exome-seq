@@ -25,7 +25,7 @@ Input files: variantannot_samplegeno.tsv, samplegeno.tsv, filtering_criteria_par
 
 Filtered lists in output directory: variantannot_samplegeno_final_all_results_filtered.tsv, samplegeno_filtered.tsv
 
-### (1) Filter for rare variants
+## (1) Filter for rare variants
 
 ``` bash
 mkdir rare_qced
@@ -37,7 +37,7 @@ Input files: variantannot_samplegeno.tsv, samplegeno.tsv, rare_qced_params.txt
 Output files: rare_qced/variantannot_samplegeno_final_all_results_filtered.tsv, rare_qced/samplegeno_filtered.tsv
 
 
-### (2) Filter for rare pathogenic variants
+## (2) Filter for rare pathogenic variants
 
 ``` bash
 mkdir rare_qced_del
@@ -49,7 +49,7 @@ Input files: variantannot_samplegeno.tsv, samplegeno.tsv, rare_qced_del_params.t
 Output files: rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv, rare_qced_del/samplegeno_filtered.tsv
 
 
-### (3) Filter for rare benign variants
+## (3) Filter for rare benign variants
 
 ``` bash
 mkdir rare_qced_benign
