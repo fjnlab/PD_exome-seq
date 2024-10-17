@@ -103,5 +103,5 @@ Output file: variantannot.tsv
 perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_hwe
 ```
 
-Input files: variantannot.tsv, samplegenotype_sorted_pmiss_hwe (from Variant_processing step) \
+Input files: variantannot.tsv, samplegenotype_sorted_pmiss_hwe (from "Variant_processing") \
 Output files: samplegeno.tsv, variantannot_samplegeno.tsv (See [`variantannot_samplegeno.tsv.descriptor`](/Variant_annot/variantannot_samplegeno.tsv.descriptor))
