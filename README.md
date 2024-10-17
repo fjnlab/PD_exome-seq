@@ -4,11 +4,11 @@ This repository contains codes and analyses conducted for the Discovery dataset 
 
 
 Codes & details for following steps can be found in the respective repository folders: 
-- Sample quality checks, `SampleQC`
-- Steps prior to variant quality filtering, `prior_VariantQC`
-- Variant annotation,`Variant_annot`
-- Filtering: Variant Quality and Variant Pathogenicity prediction, `Filtering`
-- Gene-based test: Stratified Cochran-Mantel-Haenszel (CMH), `Gene_based_test`
+1. Sample quality checks, `SampleQC`
+2. Steps prior to variant quality filtering, `prior_VariantQC`
+3. Variant annotation,`Variant_annot`
+4. Filtering: Variant Quality and Variant Pathogenicity prediction, `Filtering`
+5. Gene-based test: Stratified Cochran-Mantel-Haenszel (CMH), `Gene_based_test`
 
 
 ## Summary of pipeline
