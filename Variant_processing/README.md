@@ -23,6 +23,7 @@ At the filtering stage, variant QC was conducted together with variant pathogeni
 Input file: variants.vcf.gz (see [GATK VCF format](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format)) \
 Output file: variants.filtered_DPGQ.vcf.gz
 
+<br/>
 
 ## 2. Generate unique identifier (also for VEP annotation later) from `variants.filtered_DPGQ.vcf`
 ``` bash
@@ -32,6 +33,7 @@ Output file: variants.filtered_DPGQ.vcf.gz
 Input file: variants.filtered_DPGQ.vcf.gz \
 Output file: variants.filtered_DPGQ.uniqID.vcf.gz
 
+<br/>
 
 ## 3. Calculate Hardy-Weinberg Equilibrium (HWE) using PLINK (v1.90)
 See also https://zzz.bwh.harvard.edu/plink/summary.shtml#hardy
@@ -48,6 +50,7 @@ plink --bfile ${FILTERED_VCF_PREFIX} --hardy --out ${FILTERED_VCF_PREFIX}-hwe  #
 Input files: variants.filtered_DPGQ PLINK formatted files (*.bed, *.bim, *.fam) \
 Output file: <$FILTERED_VCF_PREFIX>-hwe.hwe
 
+<br/>
 
 ## 4. Calculate quality control metrics (missing call rates) and genotype count summary
 Genotype codes:
@@ -66,6 +69,7 @@ cat samplegenotype_unsorted | awk 'NR==1; NR > 1 {print $0 | "sort -V -k1,1 -k2,
 Input files: variants.filtered_DPGQ.vcf, samplelist.txt \
 Output file: samplegenotype_sorted
 
+<br/>
 
 ## 5. Calculate P(miss) for each variant
 - Calculated columns (“Pmiss”, “Pmiss_OddRatio”, Pmiss_Log_OR”, Pmiss_abs_logOR”, “total”) added to SampleGenotype_sorted
@@ -78,6 +82,7 @@ perl calculate_pmiss.pl samplegenotype_sorted samplegenotype_sorted_pmiss
 Input file: samplegenotype_sorted \
 Output file: samplegenotype_sorted_pmiss
 
+<br/>
 
 ## 6. Combine all variant metrics: Merge `samplegenotype_sorted_pmiss` and `*.hwe`
 ``` bash
