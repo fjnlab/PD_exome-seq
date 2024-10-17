@@ -62,11 +62,3 @@ Input files: rare_qced/variantannot_samplegeno_final_all_results_filtered.tsv, r
 Output files: rare_qced_benign/variantannot_samplegeno_final_all_results_filtered.tsv, rare_qced_benign/samplegeno_filtered.tsv
 
 
-
-### (d) Filter for coding variants (to obtain preQC biallelic snps to conduct sampleQC, see example file `preQC_CDS_params.txt`)
-```
-INTRON_VARIANT	NO
-CANONICAL	YES
-FILTER	PASS
-```
-
