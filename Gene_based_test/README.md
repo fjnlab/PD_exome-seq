@@ -16,8 +16,6 @@ conda env create -n essentials_env --file essentials_env.yml
 - based on filtered annotation output of `filter_annotation.pl` script
 - contains matrix of rare deleterious variants with variant annotations (VEP annotations, pathogenicity predictions, etc..) and per sample genotype calls.
 
-<br/>
-
 
 ## 2) sample information [`sample_country-condition.txt`](/Gene_based_test/sample_country-condition.txt)
 - a tab-delimited text file of Sample.ID, LibraryID, strata, status ("case" or "control)
