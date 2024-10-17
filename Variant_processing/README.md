@@ -20,7 +20,7 @@ At the filtering stage, variant QC was conducted together with variant pathogeni
 ./filter_DP8GQ20_vcf.sh
 ```
 
-Input: variants.vcf.gz (see [GATK VCF format](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format) )
+Input: variants.vcf.gz (see [GATK VCF format](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format))
 
 Output: variants.filtered_DPGQ.vcf.gz
 
