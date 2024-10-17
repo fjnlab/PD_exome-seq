@@ -94,7 +94,7 @@ Output file: variantannot.tsv
 
 
 
-### (b) Combine variantannot.tsv + samplegenotype_sorted_pmiss_hwe
+### (b) Combine `variantannot.tsv` + `samplegenotype_sorted_pmiss_hwe`
 ``` bash
 perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_hwe
 ```
