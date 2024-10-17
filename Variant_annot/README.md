@@ -118,7 +118,7 @@ Predictions based on canonical ENST_ID used. See [`resources/allcanonicalvariant
 
 
 ### 6. Combine variant annotated list with variant genotypes
-Combine VEP annotation, population level gnomAD frequencies, PolyPhen-2 prediction together with genotypes of pass QC variants to give the matrix (see example files `variantannot_samplegeno.tsv`, `samplegeno.tsv`) with the following headers:
+Combine VEP annotation, population level gnomAD frequencies, PolyPhen-2 prediction together with genotypes of pass QC variants to give the matrix (see example files [`variantannot_samplegeno.tsv`](variantannot_samplegeno.tsv), [`samplegeno.tsv`](samplegeno.tsv)) with the following headers:
 
 
 #### Combine variant annotation outputs
