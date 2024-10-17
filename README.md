@@ -1,6 +1,6 @@
 # PD exome-seq Discovery dataset analyses
 
-This repository contains codes and analyses conducted for the Discovery dataset of paper: 
+This repository contains codes and analyses conducted for the Discovery dataset. 
 
 
 Codes & details for following steps can be found in the respective repository folders: 
