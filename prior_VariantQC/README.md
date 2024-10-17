@@ -91,10 +91,9 @@ perl merge_geno_pmiss_hwe.pl ${FILTERED_VCF_PREFIX}-hwe.hwe samplegenotype_sorte
 
 Input: ${FILTERED_VCF_PREFIX}-hwe.hwe, samplegenotype_sorted_pmiss
 
-Output: samplegenotype_sorted_pmiss_hwe (see example file `samplegenotype_sorted_pmiss_hwe` and below for column information)
+Output: samplegenotype_sorted_pmiss_hwe (see example file `samplegenotype_sorted_pmiss_hwe` and `samplegenotype_sorted_pmiss_hwe.descriptor`)
 
 
-Combined variant metrics output with the following information 
 ```
 1. Chr : chromosomal position of variant
 2. Position : variant genomic coordinates based on GRCh37 (hg19)
