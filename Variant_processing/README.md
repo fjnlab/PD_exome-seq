@@ -85,7 +85,7 @@ perl merge_geno_pmiss_hwe.pl ${FILTERED_VCF_PREFIX}-hwe.hwe samplegenotype_sorte
 ```
 
 Input: ${FILTERED_VCF_PREFIX}-hwe.hwe, samplegenotype_sorted_pmiss \
-Output: samplegenotype_sorted_pmiss_hwe (see example file `samplegenotype_sorted_pmiss_hwe` and `samplegenotype_sorted_pmiss_hwe.descriptor`)
+Output: samplegenotype_sorted_pmiss_hwe (see example files `samplegenotype_sorted_pmiss_hwe`, `samplegenotype_sorted_pmiss_hwe.descriptor`)
 
 
 ```
