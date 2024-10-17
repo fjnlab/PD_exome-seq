@@ -114,24 +114,33 @@ PolyPhen-2 HDIV predictions for missense variants were [batch queried](http://ge
 - Transcripts: All
 - Annotations: All
 
-Predictions corresponding to the canonical transcripts (ENST_ID) were extracted based on UniProt_ID (UniProtKB/Swiss-Prot ID and UniProtKB/TrEMBL ID), UCSC_ID (UCSC Stable ID) or RefSeq_ID (RefSeq peptide ID, accession prefix “NP_”) obtained from [Ensembl BioMart for GRCh37](https://grch37.ensembl.org/biomart/martview).
-
-We have also provided the matched IDs of our annotated variants based on canonical transcripts, see [`resources/allcanonicalvariants_ID_PolyPhen2.list`](/resources/allcanonicalvariants_ID_PolyPhen2.list)
-
+Predictions based on canonical ENST_ID used. See [`resources/allcanonicalvariants_ID_PolyPhen2.list`](/resources/allcanonicalvariants_ID_PolyPhen2.list). 
 
 
 ### 6. Combine variant annotated list with variant genotypes
 Combine VEP annotation, population level gnomAD frequencies, PolyPhen-2 prediction together with genotypes of pass QC variants to give the matrix (see example files `variantannot_samplegeno.tsv`, `samplegeno.tsv`) with the following headers:
 
-``` bash
-## Combine variant annotation outputs
-## Output: variantannot.tsv
-perl merge_VEP_gnomad.pl variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out variants.avlist.hg19_gnomad211_exome_dropped variants.avlist.hg19_gnomad211_genome_dropped
 
-## Combine variantannot.tsv + samplegenotype_sorted_pmiss_hwe
-## Output files: variantannot_samplegeno.tsv, samplegeno.tsv
+#### Combine variant annotation outputs
+``` bash
+perl merge_VEP_gnomad.pl variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out variants.avlist.hg19_gnomad211_exome_dropped variants.avlist.hg19_gnomad211_genome_dropped
+```
+
+Input: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out, variants.avlist.hg19_gnomad211_exome_dropped, variants.avlist.hg19_gnomad211_genome_dropped
+
+Output: variantannot.tsv
+
+
+
+#### Combine variantannot.tsv + samplegenotype_sorted_pmiss_hwe
+``` bash
 perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_hwe
 ```
+
+Input: variantannot.tsv, samplegenotype_sorted_pmiss_hwe
+
+Output: samplegeno.tsv, variantannot_samplegeno.tsv (See [`variantannot_samplegeno.tsv.descriptor`](variantannot_samplegeno.tsv.descriptor) )
+
 
 ```
 1. Chr : chromosomal position of variant
