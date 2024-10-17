@@ -20,8 +20,8 @@ At the filtering stage, variant QC was conducted together with variant pathogeni
 ./filter_DP8GQ20_vcf.sh
 ```
 
-Input: variants.vcf.gz (see [GATK VCF format](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format)) \
-Output: variants.filtered_DPGQ.vcf.gz
+Input file: variants.vcf.gz (see [GATK VCF format](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format)) \
+Output file: variants.filtered_DPGQ.vcf.gz
 
 
 ## 2. Generate unique identifier (also for VEP annotation later) from `variants.filtered_DPGQ.vcf`
@@ -29,8 +29,8 @@ Output: variants.filtered_DPGQ.vcf.gz
 ./run_uniqueID_vcf.sh
 ```
 
-Input: variants.filtered_DPGQ.vcf.gz \
-Output: variants.filtered_DPGQ.uniqID.vcf.gz
+Input file: variants.filtered_DPGQ.vcf.gz \
+Output file: variants.filtered_DPGQ.uniqID.vcf.gz
 
 
 ## 3. Calculate Hardy-Weinberg Equilibrium (HWE) using PLINK (v1.90)
@@ -45,8 +45,8 @@ vim ${FILTERED_VCF_PREFIX}.fam
 plink --bfile ${FILTERED_VCF_PREFIX} --hardy --out ${FILTERED_VCF_PREFIX}-hwe  ## then extract p-val of UNAFF 
 
 ```
-Input: variants.filtered_DPGQ PLINK formatted files (*.bed, *.bim, *.fam) \
-Output: <$FILTERED_VCF_PREFIX>-hwe.hwe
+Input files: variants.filtered_DPGQ PLINK formatted files (*.bed, *.bim, *.fam) \
+Output file: <$FILTERED_VCF_PREFIX>-hwe.hwe
 
 
 ## 4. Calculate quality control metrics (missing call rates) and genotype count summary
@@ -63,8 +63,8 @@ cat samplegenotype_unsorted | awk 'NR==1; NR > 1 {print $0 | "sort -V -k1,1 -k2,
 <samplelist.txt> - A tab-delimited sample list (without header) with format: SampleName Phenotype (as "case" or "control")
 ```
 
-Input: variants.filtered_DPGQ.vcf, samplelist.txt \
-Output: samplegenotype_sorted
+Input files: variants.filtered_DPGQ.vcf, samplelist.txt \
+Output file: samplegenotype_sorted
 
 
 ## 5. Calculate P(miss) for each variant
@@ -75,8 +75,8 @@ Output: samplegenotype_sorted
 perl calculate_pmiss.pl samplegenotype_sorted samplegenotype_sorted_pmiss
 ``` 
 
-Input: samplegenotype_sorted \
-Output: samplegenotype_sorted_pmiss
+Input file: samplegenotype_sorted \
+Output file: samplegenotype_sorted_pmiss
 
 
 ## 6. Combine all variant metrics: Merge `samplegenotype_sorted_pmiss` and `*.hwe`
@@ -85,7 +85,7 @@ perl merge_geno_pmiss_hwe.pl ${FILTERED_VCF_PREFIX}-hwe.hwe samplegenotype_sorte
 ```
 
 Input: ${FILTERED_VCF_PREFIX}-hwe.hwe, samplegenotype_sorted_pmiss \
-Output: samplegenotype_sorted_pmiss_hwe (see example files `samplegenotype_sorted_pmiss_hwe`, `samplegenotype_sorted_pmiss_hwe.descriptor`)
+Output file: samplegenotype_sorted_pmiss_hwe (see example files `samplegenotype_sorted_pmiss_hwe`, `samplegenotype_sorted_pmiss_hwe.descriptor`)
 
 
 ```
