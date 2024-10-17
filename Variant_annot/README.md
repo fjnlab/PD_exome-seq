@@ -47,10 +47,11 @@ Output files: variants.DP8GQ20_filtered.uniqID.vep.table.out*
 perl VEPannot_extract.pl variants.DP8GQ20_filtered.uniqID.vep.table.out variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out
 ```
 
-Input: variants.DP8GQ20_filtered.uniqID.vep.table.out \
-Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out (See [`variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor`](/Variant_annot/variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor))
+Input file: variants.DP8GQ20_filtered.uniqID.vep.table.out \
+Output file: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out (See [`variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor`](/Variant_annot/variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor))
 
 ```
+## variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out columns description
 1. Chr : chromosomal position of variant
 2. Position : variant genomic coordinates based on GRCh37 (hg19)
 3. Ref : reference allele
@@ -141,6 +142,7 @@ Input files: variantannot.tsv, samplegenotype_sorted_pmiss_hwe (from "Variant_pr
 Output files: samplegeno.tsv, variantannot_samplegeno.tsv (See [`variantannot_samplegeno.tsv.descriptor`](/Variant_annot/variantannot_samplegeno.tsv.descriptor))
 
 ```
+## variantannot_samplegeno.tsv columns description
 1. Chr : chromosomal position of variant
 2. Position : variant genomic coordinates based on GRCh37 (hg19)
 3. Ref : reference allele
