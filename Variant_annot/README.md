@@ -139,7 +139,7 @@ perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_
 
 Input: variantannot.tsv, samplegenotype_sorted_pmiss_hwe
 
-Output: samplegeno.tsv, variantannot_samplegeno.tsv (See [`variantannot_samplegeno.tsv.descriptor`](variantannot_samplegeno.tsv.descriptor) )
+Output: samplegeno.tsv, variantannot_samplegeno.tsv (See [`variantannot_samplegeno.tsv.descriptor`](/Variant_annot/variantannot_samplegeno.tsv.descriptor) )
 
 
 ```
