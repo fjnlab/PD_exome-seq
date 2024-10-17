@@ -35,7 +35,7 @@ Rscript --verbose --no-save CMH_rare-del_gene-based.R >& stderr-out_rare-del_gen
 
 Input file: rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv
   
-Output files: 
-- rare_del_gene-based_Fishers-CMH.txt: Gene-based test results (see [`rare_del_gene-based_Fishers-CMH.txt.descriptor`](/Gene_based_test/rare_del_gene-based_Fishers-CMH.txt.descriptor))
-- stderr-out_rare-del_gene-based.txt: Script running errors, warning and message (see example output)
+Output files: \
+rare_del_gene-based_Fishers-CMH.txt: Gene-based test results (see [`rare_del_gene-based_Fishers-CMH.txt.descriptor`](/Gene_based_test/rare_del_gene-based_Fishers-CMH.txt.descriptor)) \
+stderr-out_rare-del_gene-based.txt: Script running errors, warning and message (see example output)
 
