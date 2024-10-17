@@ -21,9 +21,10 @@ Genome Aggregation Database (gnomAD) population-level frequencies (v2.1.1) were 
 perl filter_annotation.pl variantannot_samplegeno.tsv samplegeno.tsv <filtering_criteria_parameters.txt> <output directory/>
 ```
 
-Input files: variantannot_samplegeno.tsv, samplegeno.tsv, filtering_criteria_parameters.txt
-
+Input files: variantannot_samplegeno.tsv, samplegeno.tsv, filtering_criteria_parameters.txt \
 Filtered lists in output directory: variantannot_samplegeno_final_all_results_filtered.tsv, samplegeno_filtered.tsv
+
+<br\>
 
 ## (1) Filter for rare variants
 
@@ -32,8 +33,7 @@ mkdir rare_qced
 perl filter_annotation.pl variantannot_samplegeno.tsv samplegeno.tsv rare_qced_params.txt rare_qced/
 ```
 
-Input files: variantannot_samplegeno.tsv, samplegeno.tsv, rare_qced_params.txt
-
+Input files: variantannot_samplegeno.tsv, samplegeno.tsv, rare_qced_params.txt \
 Output files: rare_qced/variantannot_samplegeno_final_all_results_filtered.tsv, rare_qced/samplegeno_filtered.tsv
 
 
@@ -44,8 +44,7 @@ mkdir rare_qced_del
 perl filter_annotation.pl variantannot_samplegeno.tsv samplegeno.tsv rare_qced_del_params.txt rare_qced_del/
 ```
 
-Input files: variantannot_samplegeno.tsv, samplegeno.tsv, rare_qced_del_params.txt
-
+Input files: variantannot_samplegeno.tsv, samplegeno.tsv, rare_qced_del_params.txt \
 Output files: rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv, rare_qced_del/samplegeno_filtered.tsv
 
 
@@ -57,8 +56,7 @@ perl extract_benign.pl rare_qced/variantannot_samplegeno_final_all_results_filte
 
 ```
 
-Input files: rare_qced/variantannot_samplegeno_final_all_results_filtered.tsv, rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv
-
+Input files: rare_qced/variantannot_samplegeno_final_all_results_filtered.tsv, rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv \
 Output files: rare_qced_benign/variantannot_samplegeno_final_all_results_filtered.tsv, rare_qced_benign/samplegeno_filtered.tsv
 
 
