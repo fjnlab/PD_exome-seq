@@ -12,8 +12,8 @@ conda env create -n essentials_env --file essentials_env.yml
 ```
 
 # Input files required
-## 1)	annotated variant list `variantannot_samplegeno.tsv`
-- based on filtered annotation output of `filter_annotation.pl` script
+## 1)	filtered annotated variant list `variantannot_samplegeno_final_all_results_filtered.tsv`
+- based on filtered annotation output of `filter_annotation.pl` script ("Filtering)
 - contains matrix of rare deleterious variants with variant annotations (VEP annotations, pathogenicity predictions, etc..) and per sample genotype calls.
 
 ## 2) sample information [`sample_country-condition.txt`](/Gene_based_test/sample_country-condition.txt)
