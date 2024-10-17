@@ -18,6 +18,8 @@ Genome Aggregation Database (gnomAD) population-level frequencies (v2.1.1) were 
 
 # Usage
 ``` bash
+## variantannot_samplegeno.tsv: file generated from Variant_annot
+## samplegeno.tsv: file generated from Variant_annot 
 ## filtering_criteria_parameters.txt: a tab-delimited text file, see details for parameters of filtering criteria
 ## output directory with backslash “/” included, ie “output/” without quotes
 perl filter_annotation.pl variantannot_samplegeno.tsv samplegeno.tsv <filtering_criteria_parameters.txt> <output directory/>
