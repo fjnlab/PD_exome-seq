@@ -47,7 +47,7 @@ perl VEPannot_extract.pl variants.DP8GQ20_filtered.uniqID.vep.table.out variants
 ```
 
 Input: variants.DP8GQ20_filtered.uniqID.vep.table.out \
-Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out (See [`variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor`](Variant_annot/variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor))
+Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out (See [`variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor`](/Variant_annot/variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor))
 
 
 ### 4. Genome Aggregation Database (gnomAD) population-level frequencies (v2.1.1) were added using ANNOVAR
