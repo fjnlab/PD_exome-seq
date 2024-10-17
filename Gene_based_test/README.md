@@ -30,6 +30,7 @@ conda activate essentials_env
 
 To run R script for stratified CMH test
 ```bash
+## place sample_country-condition.txt in filtered annot output dir i.e. "rare_qced_del"
 cd rare_qced_del
 Rscript --verbose --no-save CMH_rare-del_gene-based.R >& stderr-out_rare-del_gene-based.txt
 ```
