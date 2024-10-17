@@ -26,7 +26,7 @@ setname <- "rare_del"
 # ---- 1.1) Load annotated variant matrix with per sample per variant genotype ------------------------------------------------------------------------------------------------------------------
 writeLines("\n# 1.1) Load annotated variant matrix \n")
 
-tsv <- read_tsv(file="variantannot_samplegeno.tsv", col_names = TRUE)
+tsv <- read_tsv(file="variantannot_samplegeno_final_all_results_filtered.tsv", col_names = TRUE)
 
 # prepare keys of ENSG_id to gene symbols and chr no
 key_ENSGid_gene <- tsv %>% 
