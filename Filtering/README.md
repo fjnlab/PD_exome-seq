@@ -4,7 +4,7 @@
 
 Variant quality score recalibration (VQSR, GATK v3.7) was performed to exclude low quality SNP calls. Low quality genotype calls (DP <8 and GQ <20) were excluded. Variants with low call rates in cases, controls and all samples respectively (<95%), failed tests for Hardy-Weinberg equilibrium (P<1×10-6) and high differential missingness between cases and controls (P<1×10-4) were excluded from further analyses.
 
-<br\>
+<br/>
 
 ***Variant pathogenicity filtering***
 
@@ -26,7 +26,7 @@ perl filter_annotation.pl variantannot_samplegeno.tsv samplegeno.tsv <filtering_
 Input files: variantannot_samplegeno.tsv, samplegeno.tsv, filtering_criteria_parameters.txt \
 Filtered lists in output directory: variantannot_samplegeno_final_all_results_filtered.tsv, samplegeno_filtered.tsv
 
-<br\>
+<br/>
 
 ## (1) Filter for rare variants
 
