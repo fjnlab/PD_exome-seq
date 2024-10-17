@@ -4,6 +4,8 @@
 
 Variant quality score recalibration (VQSR, GATK v3.7) was performed to exclude low quality SNP calls. Low quality genotype calls (DP <8 and GQ <20) were excluded. Variants with low call rates in cases, controls and all samples respectively (<95%), failed tests for Hardy-Weinberg equilibrium (P<1×10-6) and high differential missingness between cases and controls (P<1×10-4) were excluded from further analyses.
 
+<br\>
+
 ***Variant pathogenicity filtering***
 
 Functional predictions for missense variants were derived from PolyPhen-2 (v2.2.3r406) while the VEP plugin LOFTEE (v1.0.3) was used for functional prediction of stop gain or stop loss, splice site disrupting and frameshift variants. Each variant was classified as damaging based on PolyPhen2 (probably or possibly damaging) and LOFTEE (high confidence) predictions.
