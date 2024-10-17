@@ -20,8 +20,7 @@ At the filtering stage, variant QC was conducted together with variant pathogeni
 ./filter_DP8GQ20_vcf.sh
 ```
 
-Input: variants.vcf.gz (see [GATK VCF format](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format))
-
+Input: variants.vcf.gz (see [GATK VCF format](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format)) \
 Output: variants.filtered_DPGQ.vcf.gz
 
 
@@ -30,8 +29,7 @@ Output: variants.filtered_DPGQ.vcf.gz
 ./run_uniqueID_vcf.sh
 ```
 
-Input: variants.filtered_DPGQ.vcf.gz
-
+Input: variants.filtered_DPGQ.vcf.gz \
 Output: variants.filtered_DPGQ.uniqID.vcf.gz
 
 
@@ -47,8 +45,7 @@ vim ${FILTERED_VCF_PREFIX}.fam
 plink --bfile ${FILTERED_VCF_PREFIX} --hardy --out ${FILTERED_VCF_PREFIX}-hwe  ## then extract p-val of UNAFF 
 
 ```
-Input: variants.filtered_DPGQ PLINK formatted files (*.bed, *.bim, *.fam)
-
+Input: variants.filtered_DPGQ PLINK formatted files (*.bed, *.bim, *.fam) \
 Output: <$FILTERED_VCF_PREFIX>-hwe.hwe
 
 
@@ -66,8 +63,7 @@ cat samplegenotype_unsorted | awk 'NR==1; NR > 1 {print $0 | "sort -V -k1,1 -k2,
 <samplelist.txt> - A tab-delimited sample list (without header) with format: SampleName Phenotype (as "case" or "control")
 ```
 
-Input: variants.filtered_DPGQ.vcf, samplelist.txt
-
+Input: variants.filtered_DPGQ.vcf, samplelist.txt \
 Output: samplegenotype_sorted
 
 
@@ -79,8 +75,7 @@ Output: samplegenotype_sorted
 perl calculate_pmiss.pl samplegenotype_sorted samplegenotype_sorted_pmiss
 ``` 
 
-Input: samplegenotype_sorted
-
+Input: samplegenotype_sorted \
 Output: samplegenotype_sorted_pmiss
 
 
@@ -89,8 +84,7 @@ Output: samplegenotype_sorted_pmiss
 perl merge_geno_pmiss_hwe.pl ${FILTERED_VCF_PREFIX}-hwe.hwe samplegenotype_sorted_pmiss samplegenotype_sorted_pmiss_hwe
 ```
 
-Input: ${FILTERED_VCF_PREFIX}-hwe.hwe, samplegenotype_sorted_pmiss
-
+Input: ${FILTERED_VCF_PREFIX}-hwe.hwe, samplegenotype_sorted_pmiss \
 Output: samplegenotype_sorted_pmiss_hwe (see example file `samplegenotype_sorted_pmiss_hwe` and `samplegenotype_sorted_pmiss_hwe.descriptor`)
 
 
