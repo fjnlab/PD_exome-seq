@@ -1,0 +1,223 @@
+running
+  '/usr/programs/miniforge-pypy3/envs/essentials_env/lib/R/bin/R --no-echo --no-restore --no-save --file=CMH_rare-del_gene-based.R'
+
+NOTE: Either Arial Narrow or Roboto Condensed fonts are required to use these themes.
+      Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and
+      if Arial Narrow is not on your system, please see https://bit.ly/arialnarrow
+Loading required package: viridisLite
+
+Attaching package: ‘psych’
+
+The following objects are masked from ‘package:ggplot2’:
+
+    %+%, alpha
+
+
+Attaching package: ‘data.table’
+
+The following object is masked from ‘package:purrr’:
+
+    transpose
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:data.table’:
+
+    between, first, last
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+✔ tibble  3.1.7     ✔ stringr 1.4.0
+✔ readr   2.1.2     ✔ forcats 0.5.1
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ psych::%+%()            masks ggplot2::%+%()
+✖ psych::alpha()          masks ggplot2::alpha()
+✖ dplyr::between()        masks data.table::between()
+✖ dplyr::filter()         masks stats::filter()
+✖ dplyr::first()          masks data.table::first()
+✖ dplyr::lag()            masks stats::lag()
+✖ dplyr::last()           masks data.table::last()
+✖ data.table::transpose() masks purrr::transpose()
+
+Attaching package: ‘janitor’
+
+The following objects are masked from ‘package:stats’:
+
+    chisq.test, fisher.test
+
+
+===== Libraries loaded =====
+
+
+# 1.1) Load annotated variant matrix 
+
+New names:
+• `Ref` -> `Ref...3`
+• `Alt` -> `Alt...4`
+• `TranscriptID` -> `TranscriptID...5`
+• `Allele_Freq_Control` -> `Allele_Freq_Control...47`
+• `Allele_Freq_Case` -> `Allele_Freq_Case...48`
+• `Allele_Freq_All_Samples` -> `Allele_Freq_All_Samples...49`
+• `Missing_Call_Rate_Control` -> `Missing_Call_Rate_Control...50`
+• `Missing_Call_Rate_Case` -> `Missing_Call_Rate_Case...51`
+• `Missing_Call_Rate_All` -> `Missing_Call_Rate_All...52`
+• `Filter` -> `Filter...53`
+• `Control_NA` -> `Control_NA...54`
+• `Control_0` -> `Control_0...55`
+• `Control_1` -> `Control_1...56`
+• `Control_2` -> `Control_2...57`
+• `Case_NA` -> `Case_NA...58`
+• `Case_0` -> `Case_0...59`
+• `Case_1` -> `Case_1...60`
+• `Case_2` -> `Case_2...61`
+• `P_miss` -> `P_miss...62`
+• `P_miss_OddRatio` -> `P_miss_OddRatio...63`
+• `P_miss_Log_OR` -> `P_miss_Log_OR...64`
+• `P_miss_abs_logOR` -> `P_miss_abs_logOR...65`
+• `total` -> `total...66`
+• `HWE_ctrl_pval` -> `HWE_ctrl_pval...67`
+• `Ref` -> `Ref...70`
+• `Alt` -> `Alt...71`
+• `TranscriptID` -> `TranscriptID...72`
+• `Allele_Freq_Control` -> `Allele_Freq_Control...9883`
+• `Allele_Freq_Case` -> `Allele_Freq_Case...9884`
+• `Allele_Freq_All_Samples` -> `Allele_Freq_All_Samples...9885`
+• `Missing_Call_Rate_Control` -> `Missing_Call_Rate_Control...9886`
+• `Missing_Call_Rate_Case` -> `Missing_Call_Rate_Case...9887`
+• `Missing_Call_Rate_All` -> `Missing_Call_Rate_All...9888`
+• `Filter` -> `Filter...9889`
+• `Control_NA` -> `Control_NA...9890`
+• `Control_0` -> `Control_0...9891`
+• `Control_1` -> `Control_1...9892`
+• `Control_2` -> `Control_2...9893`
+• `Case_NA` -> `Case_NA...9894`
+• `Case_0` -> `Case_0...9895`
+• `Case_1` -> `Case_1...9896`
+• `Case_2` -> `Case_2...9897`
+• `P_miss` -> `P_miss...9898`
+• `P_miss_OddRatio` -> `P_miss_OddRatio...9899`
+• `P_miss_Log_OR` -> `P_miss_Log_OR...9900`
+• `P_miss_abs_logOR` -> `P_miss_abs_logOR...9901`
+• `total` -> `total...9902`
+• `HWE_ctrl_pval` -> `HWE_ctrl_pval...9903`
+Rows: 28 Columns: 9903
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr   (32): Ref...3, Alt...4, TranscriptID...5, GeneID, GeneName, #Uploaded_...
+dbl (9869): #Chr, Position, gnomAD2.1.1_exomes_AF, gnomAD2.1.1_exomes_AFR, g...
+lgl    (2): gnomAD2.1.1_genomes_SAS, Intron_number
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+# 1.2) Summarise sample-level carrier counts for each gene 
+
+
+# 1.3) Annotate gene-level carrier matrix with strata info and case/control status 
+
+[1] "data.table" "data.frame"
+[1] "df1 generated"
+[1] "data.table" "data.frame"
+[1] "df2 generated"
+[1] "data.table" "data.frame"
+[1] "df3 generated"
+[1] "data.table" "data.frame"
+[1] "df4 generated"
+[1] "data.table" "data.frame"
+[1] "df5 generated"
+[1] "data.table" "data.frame"
+[1] "df6 generated"
+[1] "data.table" "data.frame"
+[1] "df7 generated"
+[1] "data.table" "data.frame"
+[1] "df8 generated"
+[1] "data.table" "data.frame"
+[1] "df9 generated"
+[1] "data.table" "data.frame"
+[1] "df10 generated"
+
+# 2) Summarise by population 
+
+      [,1]         
+ [1,] "SG control" 
+ [2,] "HK control" 
+ [3,] "KR control" 
+ [4,] "KR case"    
+ [5,] "HK case"    
+ [6,] "TW case"    
+ [7,] "MAL case"   
+ [8,] "SG case"    
+ [9,] "TW control" 
+[10,] "MAL control"
+
+==== Summary by population completed ====
+
+
+# 3) Association tests 
+
+
+# # 3.1) Prepare matrix for association test 
+
+ [1] "ENSGid_gene"              "SGMAL.case.carrier"      
+ [3] "SGMAL.case.noncarrier"    "SGMAL.control.carrier"   
+ [5] "SGMAL.control.noncarrier" "HK.case.carrier"         
+ [7] "HK.case.noncarrier"       "HK.control.carrier"      
+ [9] "HK.control.noncarrier"    "KR.case.carrier"         
+[11] "KR.case.noncarrier"       "KR.control.carrier"      
+[13] "KR.control.noncarrier"    "TW.case.carrier"         
+[15] "TW.case.noncarrier"       "TW.control.carrier"      
+[17] "TW.control.noncarrier"    "ALL.case.carrier"        
+[19] "ALL.case.noncarrier"      "ALL.control.carrier"     
+[21] "ALL.control.noncarrier"  
+
+# 3.2) Fisher's test 
+
+# A tibble: 1 × 37
+  ENSGid_gene           SGMAL.case.carrier SGMAL.case.noncarri… SGMAL.control.c…
+  <chr>                              <int>                <dbl>            <int>
+1 ENSG00000166311_SMPD1                 85                 2526               53
+# … with 33 more variables: SGMAL.control.noncarrier <dbl>,
+#   HK.case.carrier <int>, HK.case.noncarrier <dbl>, HK.control.carrier <int>,
+#   HK.control.noncarrier <dbl>, KR.case.carrier <int>,
+#   KR.case.noncarrier <dbl>, KR.control.carrier <int>,
+#   KR.control.noncarrier <dbl>, TW.case.carrier <int>,
+#   TW.case.noncarrier <dbl>, TW.control.carrier <int>,
+#   TW.control.noncarrier <dbl>, ALL.case.carrier <int>, …
+
+==== "genefishercounts_edit" RDS generated ====
+
+
+# 3.3) CMH
+
+
+ === Running CMH ===
+
+
+ === CMH completed === 
+
+
+# 3.4) Find significant gene-based CMH test results
+
+
+ OUTPUT: CMH exome-wide significant genes 
+
+                      CMH_SGMAL_HK_KR_TW_pvalue CMH_SGMAL_HK_KR_TW_OR
+ENSG00000166311_SMPD1              1.372109e-07              2.320138
+                      CMH_SGMAL_HK_KR_TW_confint1 CMH_SGMAL_HK_KR_TW_confint2
+ENSG00000166311_SMPD1                    1.681751                    3.200854
+                      CMH_SGMAL_HK_KR_TW_statistic
+ENSG00000166311_SMPD1                     27.76177
+
+# 4) Merge Fisher's and CMH results
+
+
+!!! ====== SCRIPT COMPLETED ====== !!!
+
