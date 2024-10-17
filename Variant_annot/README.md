@@ -50,7 +50,7 @@ perl VEPannot_extract.pl variants.DP8GQ20_filtered.uniqID.vep.table.out variants
 Input: variants.DP8GQ20_filtered.uniqID.vep.table.out \
 Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out (See [`variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor`](/Variant_annot/variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor))
 
-```bash
+```
 1. Chr : chromosomal position of variant
 2. Position : variant genomic coordinates based on GRCh37 (hg19)
 3. Ref : reference allele
@@ -140,7 +140,7 @@ perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_
 Input files: variantannot.tsv, samplegenotype_sorted_pmiss_hwe (from "Variant_processing") \
 Output files: samplegeno.tsv, variantannot_samplegeno.tsv (See [`variantannot_samplegeno.tsv.descriptor`](/Variant_annot/variantannot_samplegeno.tsv.descriptor))
 
-``` bash
+```
 1. Chr : chromosomal position of variant
 2. Position : variant genomic coordinates based on GRCh37 (hg19)
 3. Ref : reference allele
