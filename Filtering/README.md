@@ -38,6 +38,8 @@ perl filter_annotation.pl variantannot_samplegeno.tsv samplegeno.tsv rare_qced_p
 Input files: variantannot_samplegeno.tsv, samplegeno.tsv, rare_qced_params.txt \
 Output files: rare_qced/variantannot_samplegeno_final_all_results_filtered.tsv, rare_qced/samplegeno_filtered.tsv
 
+<br/>
+
 
 ## (2) Filter for rare pathogenic variants
 
@@ -48,6 +50,8 @@ perl filter_annotation.pl variantannot_samplegeno.tsv samplegeno.tsv rare_qced_d
 
 Input files: variantannot_samplegeno.tsv, samplegeno.tsv, rare_qced_del_params.txt \
 Output files: rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv, rare_qced_del/samplegeno_filtered.tsv
+
+<br/>
 
 
 ## (3) Filter for rare benign variants
