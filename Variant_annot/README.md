@@ -3,7 +3,7 @@ Single nucleotide variants and small insertions and deletions were annotated usi
 
 Code here is based on GRCh37 (hg19) genomic coordinates.
 
-## Requirements
+# Requirements
 - PERL
 - [Ensembl VEP](https://asia.ensembl.org/info/docs/tools/vep/script/vep_download.html) (v104) and [non-indexed cache](https://asia.ensembl.org/info/docs/tools/vep/script/vep_cache.html) database (v104) for GRCh37
 - [dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP) (v3.5a) for VEP plugin
@@ -12,18 +12,17 @@ Code here is based on GRCh37 (hg19) genomic coordinates.
 - [PolyPhen-2](http://genetics.bwh.harvard.edu/pph2/) tool (v2.2.3r406)
 
 
-## Usage
-### 1. Generate unique identifier for VEP submission from `variants.filtered_DPGQ.vcf.gz`. (Already done in "Variant Processing", see step #2)
+# Usage
+## 1. Generate unique identifier for VEP submission from `variants.filtered_DPGQ.vcf.gz`. (Already done in "Variant Processing", see step #2)
 ```bash
 ./run_uniqueID_vcf.sh
 ```
 Input file: variants.filtered_DPGQ.vcf.gz \
 Output file: variants.filtered_DPGQ.uniqID.vcf.gz
 
-<br/>
 
 
-### 2. Variants annotation was carried out using VEP
+## 2. Variants annotation was carried out using VEP
 ```bash
 ${VEP} -i ${VCF_IN} --cache --dir_cache ${CACHE_DB} --offline --cache_version 104 --use_given_ref \
  --assembly GRCh37 \
@@ -39,10 +38,9 @@ ${VEP} -i ${VCF_IN} --cache --dir_cache ${CACHE_DB} --offline --cache_version 10
 Input file: variants.filtered_DPGQ.uniqID.vcf.gz \
 Output files: variants.DP8GQ20_filtered.uniqID.vep.table.out*
 
-<br/>
 
 
-### 3. Filter VEP output & extract relevant columns 
+## 3. Filter VEP output & extract relevant columns 
 ```bash
 ## to extract required VEP annotation columns
 perl VEPannot_extract.pl variants.DP8GQ20_filtered.uniqID.vep.table.out variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out
@@ -51,10 +49,10 @@ perl VEPannot_extract.pl variants.DP8GQ20_filtered.uniqID.vep.table.out variants
 Input: variants.DP8GQ20_filtered.uniqID.vep.table.out \
 Output: variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out (See [`variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor`](/Variant_annot/variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out.descriptor))
 
-<br/>
 
 
-### 4. Genome Aggregation Database (gnomAD) population-level frequencies (v2.1.1) were added using ANNOVAR
+
+## 4. Genome Aggregation Database (gnomAD) population-level frequencies (v2.1.1) were added using ANNOVAR
 Format input file `variants.filtered_DPGQ.uniqID.vcf` for ANNOVAR according to https://annovar.openbioinformatics.org/en/latest/user-guide/input/ with modifications
 
 ```bash
@@ -69,10 +67,9 @@ perl ${ANNOVAR_DIR}/annotate_variation.pl -build hg19 -filter -dbtype gnomad211_
 perl ${ANNOVAR_DIR}/annotate_variation.pl -build hg19 -filter -dbtype gnomad211_genome $outdir/variants.avlist -otherinfo $ANNOVAR_DIR/humandb/
 ```
 
-<br/>
 
 
-### 5. PolyPhen-2 predictions
+## 5. PolyPhen-2 predictions
 PolyPhen-2 HDIV predictions for missense variants were [batch queried](http://genetics.bwh.harvard.edu/pph2/bgi.shtml) with the options of: 
 - Classified model: HumDiv
 - Genome assembly: GRCh37/hg19
@@ -81,14 +78,13 @@ PolyPhen-2 HDIV predictions for missense variants were [batch queried](http://ge
 
 Predictions based on canonical ENST_ID used. See [`resources/allcanonicalvariants_ID_PolyPhen2.list`](/resources/allcanonicalvariants_ID_PolyPhen2.list). 
 
-<br/>
 
 
-### 6. Combine variant annotated list with variant genotypes
+## 6. Combine variant annotated list with variant genotypes
 Combine VEP annotation, population level gnomAD frequencies, PolyPhen-2 prediction together with genotypes of pass QC variants to give the matrix (see example files [`variantannot_samplegeno.tsv`](variantannot_samplegeno.tsv), [`samplegeno.tsv`](samplegeno.tsv)) with the following headers:
 
 
-#### (a) Combine variant annotation outputs
+### (a) Combine variant annotation outputs
 ``` bash
 perl merge_VEP_gnomad.pl variants.DP8GQ20_filtered.uniqID.vep.table.filtered.out variants.avlist.hg19_gnomad211_exome_dropped variants.avlist.hg19_gnomad211_genome_dropped
 ```
@@ -98,7 +94,7 @@ Output file: variantannot.tsv
 
 
 
-#### (b) Combine variantannot.tsv + samplegenotype_sorted_pmiss_hwe
+### (b) Combine variantannot.tsv + samplegenotype_sorted_pmiss_hwe
 ``` bash
 perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_hwe
 ```
