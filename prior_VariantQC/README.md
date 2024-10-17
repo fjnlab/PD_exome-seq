@@ -20,7 +20,7 @@ At the filtering stage, variant QC was conducted together with variant pathogeni
 ./filter_DP8GQ20_vcf.sh
 ```
 
-Input: variants.vcf.gz
+Input: variants.vcf.gz (see [GATK VCF format](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format) )
 
 Output: variants.filtered_DPGQ.vcf.gz
 
@@ -49,7 +49,7 @@ plink --bfile ${FILTERED_VCF_PREFIX} --hardy --out ${FILTERED_VCF_PREFIX}-hwe  #
 ```
 Input: variants.filtered_DPGQ PLINK formatted files (*.bed, *.bim, *.fam)
 
-Output: *.hwe
+Output: <$FILTERED_VCF_PREFIX>-hwe.hwe
 
 
 ## 4. Calculate quality control metrics (missing call rates) and genotype count summary
@@ -86,10 +86,15 @@ Output: samplegenotype_sorted_pmiss
 
 ## 6. Combine all variant metrics: Merge `samplegenotype_sorted_pmiss` and `*.hwe`
 ``` bash
-perl merge_geno_pmiss_hwe.pl <*.hwe output> samplegenotype_sorted_pmiss samplegenotype_sorted_pmiss_hwe
+perl merge_geno_pmiss_hwe.pl ${FILTERED_VCF_PREFIX}-hwe.hwe samplegenotype_sorted_pmiss samplegenotype_sorted_pmiss_hwe
 ```
 
-## 7. Combined variant metrics output with the following information (see example file `samplegenotype_sorted_pmiss_hwe`)
+Input: ${FILTERED_VCF_PREFIX}-hwe.hwe, samplegenotype_sorted_pmiss
+
+Output: samplegenotype_sorted_pmiss_hwe (see example file `samplegenotype_sorted_pmiss_hwe` and below for column information)
+
+
+Combined variant metrics output with the following information 
 ```
 1. Chr : chromosomal position of variant
 2. Position : variant genomic coordinates based on GRCh37 (hg19)
