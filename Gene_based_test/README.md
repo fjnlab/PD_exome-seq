@@ -35,7 +35,8 @@ cd rare_qced_del
 Rscript --verbose --no-save CMH_rare-del_gene-based.R >& stderr-out_rare-del_gene-based.txt
 ```
 
-Input file: 
+Input files: 
+- [`sample_country-condition.txt`](./sample_country-condition.txt)
 - [`rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv`](../Filtering/rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv)
   
 Output files:
