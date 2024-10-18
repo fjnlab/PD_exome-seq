@@ -1,7 +1,6 @@
 # PD exome-seq Discovery dataset analyses
 
-This repository contains codes and analyses conducted for the Discovery dataset in the paper, "Exome sequencing in Asian populations identifies Novel Low-Frequency and Rare Coding Variation influencing Parkinson’s disease Risk" (Nature Aging, 2024).
-
+This repository contains codes and analyses conducted for the Discovery dataset.
 
 Codes & details for following steps can be found in the respective repository folders: 
 1. Sample quality checks, `SampleQC`
