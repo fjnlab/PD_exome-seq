@@ -104,9 +104,3 @@ perl merge_annot_geno-pmiss-hwe.pl variantannot.tsv samplegenotype_sorted_pmiss_
 
 Input files: variantannot.tsv, samplegenotype_sorted_pmiss_hwe (from "Variant_processing") \
 Output files: samplegeno.tsv, variantannot_samplegeno.tsv (See [`variantannot_samplegeno.tsv.descriptor`](./variantannot_samplegeno.tsv.descriptor))
-
-9900: Pmiss_Log_OR
-9901: Pmiss_abs_logOR
-9902: total
-9903: HWE_ctrl_pval
-```
