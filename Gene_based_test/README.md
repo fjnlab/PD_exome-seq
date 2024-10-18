@@ -1,5 +1,5 @@
 # Stratified Cochran-Mantel-Haenszel gene-based test
-For the discovery cohort, a stratified Cochran-Mantel-Haenszel (CMH) test was used to evaluate gene-based burden across the exomes of the study participants from the 5 countries studied (Singapore, Malaysia, Hong Kong, South Korea, Taiwan). Singapore and Malaysia samples were considered as one stratum due to the similarity in genetic background. Exome-wide significance was preset at P < 2.5 × 10−6 (two-tailed), taking into account multiple hypothesis testing correction for an estimated 20,000 protein-coding genes in the human genome. 
+For the Discovery cohort, we evaluated gene-based burden of rare deleterious variants across the exomes of the study participants from the 5 countries studied (Singapore, Malaysia, Hong Kong, South Korea, Taiwan) using a stratified Cochran-Mantel-Haenszel (CMH) test without continuity correction. Singapore and Malaysia samples were considered as one stratum due to the similarity in genetic background. Exome-wide significance was preset at P < 2.5 × 10<sup>-6</sup> (two-tailed), taking into account multiple hypothesis testing correction for an estimated 20,000 protein-coding genes in the human genome.
 
 # Requirements
 - Conda or Miniconda3 installed (https://repo.anaconda.com/miniconda/Miniconda3-py310_23.3.1-0-Linux-x86_64.sh)
@@ -12,7 +12,7 @@ conda env create -n essentials_env --file essentials_env.yml
 ```
 
 # Input files required
-## 1)	filtered annotated variant list `variantannot_samplegeno_final_all_results_filtered.tsv`
+## 1)	rare deleterious annotated variant list [`rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv`](../Filtering/rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv)
 - based on filtered annotation output of `filter_annotation.pl` script
 - contains matrix of rare deleterious variants with variant annotations (VEP annotations, pathogenicity predictions, etc..) and per sample genotype calls.
 
@@ -35,10 +35,6 @@ cd rare_qced_del
 Rscript --verbose --no-save CMH_rare-del_gene-based.R >& stderr-out_rare-del_gene-based.txt
 ```
 
-Input files: 
-- [`sample_country-condition.txt`](./sample_country-condition.txt)
-- [`rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv`](../Filtering/rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv)
-  
 Output files:
 - rare_del_gene-based_Fishers-CMH.txt: Gene-based test results (see [`rare_del_gene-based_Fishers-CMH.txt.descriptor`](./rare_del_gene-based_Fishers-CMH.txt.descriptor))
 - stderr-out_rare-del_gene-based.txt: Script running errors, warning and message (see example output)
