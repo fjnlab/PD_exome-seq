@@ -1,0 +1,26 @@
+1. Chr : chromosomal position of variant
+2. Position : variant genomic coordinates based on GRCh37 (hg19)
+3. Ref : reference allele
+4. Alt : alternate allele
+5 - 9814. Per-sample genotype (x N sample columns, i.e. 9810 total samples in Discovery cohort): for genotype codes see previous step #4 
+9815. Allele_Freq_Control : minor allele frequencies in control samples
+9816. Allele_Freq_Case : minor allele frequencies in case samples
+9817. Allele_Freq_All_Samples : minor allele frequencies in all samples
+9818. Missing_Call_Rate_Control : calculated from “NA” genotype calls in control samples; for variant quality QC
+9819. Missing_Call_Rate_Case : calculated from “NA” genotype calls in case samples; for variant quality QC
+9820. Missing_Call_Rate_All : calculated from “NA” genotype calls in all samples; for variant quality QC
+9821. Filter : VQSR filter status; for variant quality QC
+9822. Control_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in control samples
+9823. Control_0 : no. of “0” (homozygous for reference allele) genotype calls in control samples
+9824. Control_1 : no. of “1” (heterozygous) genotype calls in control samples
+9825: Control_2 : no. of “2” (homozygous for alternate allele) genotype calls in control samples
+9826: Case_NA : no. of “NA” (no calls or fail variant quality QC) genotype calls in case samples
+9827. Case_0 : no. of “0” (homozygous for reference allele) genotype calls in case samples
+9828: Case_1 : no. of “1” (heterozygous) genotype calls in case samples
+9829: Case_2 : no. of “2” (homozygous for alternate allele) genotype calls in case samples
+9830: Pmiss : p-value for differential missingness between cases and controls; for variant quality QC
+9831: Pmiss_OddRatio : odds ratio for differential missingness between cases and controls; for variant quality QC
+9832: Pmiss_Log_OR : (log base 10) of odds ratio for differential missingness between cases and controls; for variant quality QC
+9833: Pmiss_abs_logOR : absolute value of (log base 10) odds ratio for differential missingness between cases and controls; for variant quality QC
+9834: total : total as calculated in 2 x 2 Chi-squared for pmiss calculation; for variant quality QC
+9835: HWE_ctrl_pval : p-value of Hardy-Weinberg equilibrium test for controls; for variant quality QC
