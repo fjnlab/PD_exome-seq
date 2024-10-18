@@ -17,7 +17,7 @@ conda env create -n essentials_env --file essentials_env.yml
 - contains matrix of rare deleterious variants with variant annotations (VEP annotations, pathogenicity predictions, etc..) and per sample genotype calls.
 
 
-## 2) sample information [`sample_country-condition.txt`](/Gene_based_test/sample_country-condition.txt)
+## 2) sample information [`sample_country-condition.txt`](./sample_country-condition.txt)
 - a tab-delimited text file of Sample.ID, LibraryID, strata, status ("case" or "control)
   
   
@@ -39,6 +39,6 @@ Input file:
 - rare_qced_del/variantannot_samplegeno_final_all_results_filtered.tsv
   
 Output files:
-- rare_del_gene-based_Fishers-CMH.txt: Gene-based test results (see [`rare_del_gene-based_Fishers-CMH.txt.descriptor`](/Gene_based_test/rare_del_gene-based_Fishers-CMH.txt.descriptor))
+- rare_del_gene-based_Fishers-CMH.txt: Gene-based test results (see [`rare_del_gene-based_Fishers-CMH.txt.descriptor`](./rare_del_gene-based_Fishers-CMH.txt.descriptor))
 - stderr-out_rare-del_gene-based.txt: Script running errors, warning and message (see example output)
 
