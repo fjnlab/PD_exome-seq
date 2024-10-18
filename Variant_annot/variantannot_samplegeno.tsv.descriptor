@@ -54,41 +54,41 @@
 54. Control_NA : number of “NA” (no calls or fail variant quality QC) genotype calls in control samples
 55. Control_0 : number of “0” (homozygous for reference allele) genotype calls in control samples
 56. Control_1 : number of “1” (heterozygous) genotype calls in control samples
-57: Control_2 : number of “2” (homozygous for alternate allele) genotype calls in control samples
-58: Case_NA : number of “NA” (no calls or fail variant quality QC) genotype calls in case samples
+57. Control_2 : number of “2” (homozygous for alternate allele) genotype calls in control samples
+58. Case_NA : number of “NA” (no calls or fail variant quality QC) genotype calls in case samples
 59. Case_0 : number of “0” (homozygous for reference allele) genotype calls in case samples
-60: Case_1 : number of “1” (heterozygous) genotype calls in case samples
-61: Case_2 : number of “2” (homozygous for alternate allele) genotype calls in case samples
-62: Pmiss : Fisher's test p-value for differential missingness between cases and controls; for variant quality QC
-63: Pmiss_OddRatio : odds ratio for differential missingness between cases and controls; for variant quality QC
-64: Pmiss_Log_OR : (log base 10) of odds ratio for differential missingness between cases and controls; for variant quality QC
-65: Pmiss_abs_logOR : absolute value of (log base 10) odds ratio for differential missingness between cases and controls; for variant quality QC
-66: total : total as calculated in 2 x 2 Chi-squared for pmiss calculation; for variant quality QC
-67: HWE_ctrl_pval : p-value of Hardy-Weinberg equilibrium test for controls; for variant quality QC
-68: Chr: columns here onwards are merged from samplegenotype_sorted_pmiss_hwe file
-69: Position
-70: Ref
-71: Alt
-72: TranscriptID
-73 - 9882: Per-sample genotype (x N sample columns, i.e. 9810 total samples in Discovery cohort)
-9883: Allele_Freq_Control
-9884: Allele_Freq_Case
-9885: Allele_Freq_All_Samples
-9886: Missing_Call_Rate_Control
-9887: Missing_Call_Rate_Case
-9888: Missing_Call_Rate_All
-9889: Filter
-9890: Control_NA
-9891: Control_0
-9892: Control_1
-9893: Control_2
-9894: Case_NA
-9895: Case_0
-9896: Case_1
-9897: Case_2
-9898: Pmiss
-9899: Pmiss_OddRatio
-9900: Pmiss_Log_OR
-9901: Pmiss_abs_logOR
-9902: total
-9903: HWE_ctrl_pval
+60. Case_1 : number of “1” (heterozygous) genotype calls in case samples
+61. Case_2 : number of “2” (homozygous for alternate allele) genotype calls in case samples
+62. Pmiss : Fisher's test p-value for differential missingness between cases and controls; for variant quality QC
+63. Pmiss_OddRatio : odds ratio for differential missingness between cases and controls; for variant quality QC
+64. Pmiss_Log_OR : (log base 10) of odds ratio for differential missingness between cases and controls; for variant quality QC
+65. Pmiss_abs_logOR : absolute value of (log base 10) odds ratio for differential missingness between cases and controls; for variant quality QC
+66. total : total as calculated in 2 x 2 Chi-squared for pmiss calculation; for variant quality QC
+67. HWE_ctrl_pval : p-value of Hardy-Weinberg equilibrium test for controls; for variant quality QC
+68. Chr: columns here onwards are merged from samplegenotype_sorted_pmiss_hwe file
+69. Position
+70. Ref
+71. Alt
+72. TranscriptID
+73 - 9882. Per-sample genotype (x N sample columns, i.e. 9810 total samples in Discovery cohort)
+9883. Allele_Freq_Control
+9884. Allele_Freq_Case
+9885. Allele_Freq_All_Samples
+9886. Missing_Call_Rate_Control
+9887. Missing_Call_Rate_Case
+9888. Missing_Call_Rate_All
+9889. Filter
+9890. Control_NA
+9891. Control_0
+9892. Control_1
+9893. Control_2
+9894. Case_NA
+9895. Case_0
+9896. Case_1
+9897. Case_2
+9898. Pmiss
+9899. Pmiss_OddRatio
+9900. Pmiss_Log_OR
+9901. Pmiss_abs_logOR
+9902. total
+9903. HWE_ctrl_pval
