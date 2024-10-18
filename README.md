@@ -24,7 +24,7 @@ Our pipeline is based on GRCh37 (hg19) genomic coordinates.
 ## Contact
 For questions, you may contact:
 
-Jia Nee Foo, jianee.foo@ntu.edu.sg
-Elaine Chew, elaine.chew@ntu.edu.sg
+Jia Nee Foo, jianee.foo@ntu.edu.sg \
+Elaine Chew, elaine.chew@ntu.edu.sg \
 Michelle Lian, michellelian@ntu.edu.sg
 
